@@ -259,14 +259,14 @@ interface Props {
 
     return (
         <div>
-        <div className="flex items-center border-b dark:border-white/20" style={{pointerEvents: isMenuOpen ? 'none' : 'auto'}}>
+        <div className="flex items-center" style={{pointerEvents: isMenuOpen ? 'none' : 'auto'}}>
           <div className="pb-1 flex w-full text-lg ml-1 text-black dark:text-neutral-200 flex items-center">
             {label} 
           </div>
             {actionItem && checkIsActiveSide() && (
                 <div className="text-xs flex flex-row gap-1">
                     {`${actionItem.actionLabel}...`} 
-                    <div className="flex flex-row gap-0.5 bg-neutral-200 dark:bg-[#343541]/90 rounded">
+                    <div className="flex flex-row gap-0.5 bg-neutral-200 dark:bg-[#051228]/90 rounded">
                          <button 
                                 className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100" 
                                 onClick={(e) => {
@@ -307,16 +307,16 @@ interface Props {
                     />
                 </div> :
                 <button
-                    className={`outline-none focus:outline-none p-0.5 ${isMenuOpen ? 'bg-neutral-200 dark:bg-[#343541]/90' : ''}`}
+                    className={`outline-none focus:outline-none p-0.5 ${isMenuOpen ? 'bg-neutral-200 dark:bg-[#051228]/90' : ''}`}
                     onClick={toggleDropdown}>
-                    <IconDotsVertical size={20} className="flex-shrink-0 text-neutral-500 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-100"/>
+                    <IconDotsVertical size={30} className="flex-shrink-0 text-neutral-500 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-yellow-500"/>
                 </button>
             }
             
             {isMenuOpen && (
                 <div
                     ref={menuRef}
-                    className="ml-[-200%] absolute bg-neutral-100 dark:bg-[#202123] text-neutral-900 rounded border border-neutral-200 dark:border-neutral-600 dark:text-white z-50"
+                    className="ml-[-200%] absolute bg-neutral-100 dark:bg-[#112e51] text-neutral-900 border border-neutral-200 dark:border-neutral-600 dark:text-white z-50"
                     style={{ top: '90%', pointerEvents: 'auto' }}>
                     <div>
                         <KebabActionItem label="Delete" type={label as CheckItemType} handleAction={()=>{isConvSide ? handleDeleteConversations() : handleDeletePrompts()}} 
@@ -345,8 +345,9 @@ interface Props {
                 </div>
             )}
           </div>
+          
         </div>
-
+        
         {isShareDialogVisible && (<ShareAnythingModal
         open={isShareDialogVisible}
         onCancel={()=>{
@@ -372,7 +373,7 @@ interface Props {
         {isTagsDialogVisible && 
         <div className="fixed inset-0 bg-black bg-opacity-50 h-full w-full">
             <div className="flex items-center justify-center min-h-screen">
-              <div className="border border-neutral-300 dark:border-netural-400 bg-white dark:bg-[#202123] rounded-lg md:rounded-lg shadow-lg overflow-hidden mx-auto max-w-lg w-[400px]"
+              <div className="border border-neutral-300 dark:border-netural-400 bg-white dark:bg-[#112e51] rounded-lg md:rounded-lg shadow-lg overflow-hidden mx-auto max-w-lg w-[400px]"
               >
                 <div className="p-2 h-[60px] overflow-y-auto">
                 <TagsList tags={tags} 
@@ -431,6 +432,7 @@ interface Props {
             </div>
           </div>
         }
+        <svg className="utc-custom-separator" viewBox="0 0 350 36"><path fill="#fdb736" d="M131.2 278.4H60.8l16-67.2h70.4l-16 67.2zM256 211.2H182.4l-12.8 67.2H240l16-67.2zm105.6 0H291.2l-16 67.2h70.4l16-67.2zm108.8 0H400l-16 67.2h70.4l16-67.2zm105.6 0h-70.4l-16 67.2H560l16-67.2z"></path></svg>
         </div>
       );
       

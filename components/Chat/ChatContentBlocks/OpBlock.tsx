@@ -227,7 +227,7 @@ const OpBlock: React.FC<OpProps> = ({definition}) => {
                                     <div className="text-sm text-gray-500">{JSON.stringify(value)}</div>
                                 }/>
                             })}
-                            <button className="mt-4 w-full px-4 py-2 text-white bg-blue-500 rounded hover:bg-green-600"
+                            <button className="mt-4 w-full px-4 py-2 text-white bg-blue-500 hover:bg-green-600"
                                     onClick={handleDoOp}
                             >
                                 Go

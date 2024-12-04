@@ -96,7 +96,7 @@ export function useSendService() {
         }
 
         const contextWindow = model.actualTokenLimit;
-        // calculate cost / context window rounded up
+        // calculate cost / context window up
         const prompts = Math.ceil(cost / contextWindow);
 
         console.log("Prompts", prompts, "Cost", cost, "Context Window", contextWindow);

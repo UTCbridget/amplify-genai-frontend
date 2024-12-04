@@ -50,21 +50,21 @@ const Sidebar = <T,>({
   };
 
   const highlightDrop = (e: any) => {
-    e.target.style.background = '#343541';
+    e.target.style.background = '#051228';
   };
 
   const removeHighlight = (e: any) => {
     e.target.style.background = 'none';
   };
 
-  const addItemButton = (width: string) => ( <button className={`text-sidebar flex ${width} flex-shrink-0 cursor-pointer select-none items-center gap-3 rounded-md border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 hover:bg-gray-500/10`}
+  const addItemButton = (width: string) => ( <button className={`text-sidebar flex ${width} flex-shrink-0 justify-between cursor-pointer select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white dark:hover:text-yellow-500 transition-colors duration-200 hover:bg-gray-500/10`}
                               onClick={() => {
                                 handleCreateItem();
                                 handleSearchTerm('');
                               }}
                               >
-                                <IconPlus size={16} />
                                 {addItemButtonTitle}
+                                <svg viewBox="0 0 640 512" className="w-6"><path fill="#fdb736" d="M489.6 256c0 41.6-32 73.6-73.6 73.6s-73.6-32-73.6-73.6s32-73.6 73.6-73.6s73.6 35.2 73.6 73.6zM246.4 336a73.6 73.6 0 1 0 0 147.2 73.6 73.6 0 1 0 0-147.2zM243.2 35.2a73.6 73.6 0 1 0 0 147.2 73.6 73.6 0 1 0 0-147.2z"></path></svg>
                               </button>);
 
 
@@ -73,14 +73,15 @@ const Sidebar = <T,>({
 
     const addAssistantButton = (
       <button
-        className="text-sidebar flex w-[205px] flex-shrink-0 cursor-pointer select-none items-center gap-3 rounded-md border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 hover:bg-gray-500/10"
+        className="text-sidebar flex w-[205px] flex-shrink-0 cursor-pointer select-none items-center justify-between gap-3 border dark:border-white/20 p-3 dark:text-white dark:hover:text-yellow-500 transition-colors duration-200 hover:bg-gray-500/10"
         onClick={() => {
           handleCreateAssistantItem();
           handleSearchTerm('');
         }}
       >
-        <IconPlus size={16} />
+       
         {"Assistant"}
+        <svg viewBox="0 0 640 512" className="w-6" ><path fill="#fdb736" d="M489.6 256c0 41.6-32 73.6-73.6 73.6s-73.6-32-73.6-73.6s32-73.6 73.6-73.6s73.6 35.2 73.6 73.6zM246.4 336a73.6 73.6 0 1 0 0 147.2 73.6 73.6 0 1 0 0-147.2zM243.2 35.2a73.6 73.6 0 1 0 0 147.2 73.6 73.6 0 1 0 0-147.2z"></path></svg>
       </button>
     );
 
@@ -91,12 +92,12 @@ const Sidebar = <T,>({
   return (
     <div className={`border-t dark:border-white/20 overflow-x-hidden h-full`}>
       <div
-        className={`fixed top-0 ${side}-0 z-40 flex h-full w-[270px] flex-none flex-col space-y-2 bg-neutral-100 dark:bg-[#202123] p-2 text-[14px] transition-all sm:relative sm:top-0`}
+        className={`fixed top-0 ${side}-0 z-40 flex h-full w-[270px] flex-none flex-col space-y-2 bg-neutral-100 dark:bg-[#051228] p-2 text-[14px] transition-all sm:relative sm:top-0`}
       >
         <div className="flex items-center">
           {addButtonForSide(side)}
           <button
-            className="ml-2 flex flex-shrink-0 cursor-pointer items-center gap-3 rounded-md border dark:border-white/20 p-3 text-sm dark:text-white transition-colors duration-200 hover:bg-gray-500/10"
+            className="ml-2 flex flex-shrink-0 cursor-pointer items-center gap-3 border dark:border-white/20 p-3 text-sm dark:text-white transition-colors duration-200 hover:bg-gray-500/10"
             onClick={handleCreateFolder}
             title="Create Folder"
           >

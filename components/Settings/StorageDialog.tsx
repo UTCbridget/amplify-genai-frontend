@@ -110,7 +110,7 @@ export const StorageDialog: FC<Props> = ({ open, onClose }) => {
 
           <div
             ref={modalRef}
-            className="dark:border-netural-400 inline-block max-h-[400px] transform overflow-y-auto rounded-lg border border-gray-300 bg-white px-4 pt-5 pb-4 text-left align-bottom shadow-xl transition-all dark:bg-[#202123] sm:my-8 sm:max-h-[600px] sm:w-full sm:max-w-lg sm:p-6 sm:align-middle"
+            className="dark:border-netural-400 inline-block max-h-[400px] transform overflow-y-auto rounded-lg border border-gray-300 bg-white px-4 pt-5 pb-4 text-left align-bottom shadow-xl transition-all dark:bg-[#112e51] sm:my-8 sm:max-h-[600px] sm:w-full sm:max-w-lg sm:p-6 sm:align-middle"
             role="dialog"
           >
             <div className="text-lg pb-4 font-bold text-black dark:text-neutral-200 flex items-center">
@@ -121,7 +121,7 @@ export const StorageDialog: FC<Props> = ({ open, onClose }) => {
               {t('Where would you like to store your conversations?')}
             </div>
 
-            <div className="flex items-center p-2 border border-gray-400 dark:border-gray-500 rounded ">
+            <div className="flex items-center p-2 border border-gray-400 dark:border-gray-500 ">
               <IconInfoCircle size={16} className='ml-1 mb-1 flex-shrink-0 text-gray-600 dark:text-gray-400' />
               <span className="ml-2 text-xs text-gray-600 dark:text-gray-400"> 
               {"These are default settings that could be manually overwritten at the conversation level as indicated by the cloud icon."}

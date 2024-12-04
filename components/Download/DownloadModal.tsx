@@ -407,7 +407,7 @@ export const DownloadModal: FC<DownloadModalProps> = (
                     className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
                     <div className="hidden sm:inline-block sm:h-screen sm:align-middle" aria-hidden="true"/>
                     <div
-                        className="border-neutral-400 dark:border-netural-400 inline-block transform overflow-y-auto rounded-lg border border-gray-300 bg-white px-4 py-5 text-left align-bottom shadow-xl transition-all dark:bg-[#202123] sm:my-8 sm:max-w-lg sm:p-6 sm:align-middle"
+                        className="border-neutral-400 dark:border-netural-400 inline-block transform overflow-y-auto rounded-lg border border-gray-300 bg-white px-4 py-5 text-left align-bottom shadow-xl transition-all dark:bg-[#112e51] sm:my-8 sm:max-w-lg sm:p-6 sm:align-middle"
                         role="dialog"
                     >
                         {isSharing && (
@@ -439,7 +439,7 @@ export const DownloadModal: FC<DownloadModalProps> = (
                                     <div className="grid grid-cols-2 w-full items-center p-2">
 
                                         <div>Format</div>
-                                        <div className="ml-2 rounded w-full text-black pr-2 pt-2">
+                                        <div className="ml-2 w-full text-black pr-2 pt-2">
                                         <select
                                             onChange={(e) => {
                                                 if(e.target.value === 'pptx'){
@@ -460,7 +460,7 @@ export const DownloadModal: FC<DownloadModalProps> = (
                                         </div>
 
                                         <div>Template</div>
-                                        <div className="ml-2 rounded w-full text-black pr-2 pt-2">
+                                        <div className="ml-2 w-full text-black pr-2 pt-2">
                                             <select
                                                 onChange={(e) => {
                                                     setTemplateSelection(e.target.value );
@@ -474,7 +474,7 @@ export const DownloadModal: FC<DownloadModalProps> = (
                                         </div>
 
                                         <div>Include Conversation Name</div>
-                                        <div className="ml-2 rounded w-full text-black pr-2 pt-2">
+                                        <div className="ml-2 w-full text-black pr-2 pt-2">
                                             <select
                                                 onChange={(e) => {
                                                     setIncludeConversationName(e.target.value === 'true');
@@ -490,7 +490,7 @@ export const DownloadModal: FC<DownloadModalProps> = (
                                         <div className="mt-2">Include</div>
                                             )}
                                         {showInclude && (
-                                        <div className="ml-2 rounded text-black pr-2 pt-2">
+                                        <div className="ml-2 text-black pr-2 pt-2">
                                             <select
                                                 onChange={(e) => {
                                                     setIncludeMode(e.target.value);

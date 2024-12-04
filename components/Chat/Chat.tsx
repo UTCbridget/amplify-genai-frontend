@@ -339,7 +339,7 @@ export const Chat = memo(({stopConversationRef}: Props) => {
 
             console.log("Model", model);
             const contextWindow = model.actualTokenLimit;
-            // calculate cost / context window rounded up
+            // calculate cost / context window up
             const prompts = Math.ceil(cost / contextWindow);
 
             console.log("Prompts", prompts, "Cost", cost, "Context Window", contextWindow);
@@ -708,7 +708,7 @@ export const Chat = memo(({stopConversationRef}: Props) => {
 
 // @ts-ignore
         return (
-            <div className="relative flex-1 overflow-hidden bg-white dark:bg-[#343541]">
+            <div className="relative flex-1 overflow-hidden bg-white dark:bg-[#051228] bg-[url('/chattutc-light-bg.jpg')] dark:bg-[url('/chattutc-dark-bg.jpg')] bg-cover">
                 { modelError ? (
                     <ErrorMessageDiv error={modelError}/>
                 ) : (
@@ -723,7 +723,7 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                     <div
                                         className="mx-auto flex flex-col space-y-5 md:space-y-10 px-3 pt-5 md:pt-12 sm:max-w-[600px]">
                                         <div
-                                            className="text-center text-3xl font-semibold text-gray-800 dark:text-gray-100">
+                                            className="text-center text-3xl font-semibold text-blue-500 dark:text-white">
                                             {models.length === 0 ? (
                                                 <div>
                                                     <Spinner size="16px" className="mx-auto"/>
@@ -1003,7 +1003,7 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                     {loading && <ChatLoader/>}
 
                                     <div
-                                        className="h-[162px] bg-white dark:bg-[#343541]"
+                                        className="h-[162px] bg-white dark:bg-[#051228]"
                                         ref={messagesEndRef}
                                     />
 

@@ -141,7 +141,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                     />
 
                     <div
-                        className="dark:border-netural-400 inline-block overflow-hidden rounded-lg border border-gray-300 bg-white px-4 pt-5 text-left align-bottom shadow-xl transition-all dark:bg-[#202123] sm:my-8 sm:w-full sm:max-w-[770px] sm:align-middle"
+                        className="dark:border-netural-400 inline-block overflow-hidden rounded-lg border border-gray-300 bg-white px-4 pt-5 text-left align-bottom shadow-xl transition-all dark:bg-[#112e51] sm:my-8 sm:w-full sm:max-w-[770px] sm:align-middle"
                         ref={modalRef}
                         role="dialog"
                     >
@@ -190,7 +190,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                             </div>
                             <div className="flex flex-row items-center">
                                 <button
-                                    className="left-1 top-2 rounded-sm p-1 text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200"
+                                    className="left-1 top-2 p-1 text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200"
                                     onClick={(e) => {
                                         e.preventDefault();
                                         e.stopPropagation();
@@ -246,7 +246,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                                     <div className="flex flex-row justify-end">
                                         <button
                                             type="button"
-                                            className="rounded-t-xl dark:text-white border-neutral-500 text-neutral-900 focus:outline-none dark:border-neutral-800 dark:bg-[#343541] dark:text-black"
+                                            className="rounded-t-xl dark:text-white border-neutral-500 text-neutral-900 focus:outline-none dark:border-neutral-800 dark:bg-[#051228] dark:text-black"
                                             onClick={() => {
                                                 setShowDataSourceSelector(false);
                                             }}
@@ -254,7 +254,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                                             <IconCircleX/>
                                         </button>
                                     </div>
-                                    <div className="rounded bg-white dark:bg-[#343541]">
+                                    <div className="bg-white dark:bg-[#051228]">
                                         <DataSourceSelector
                                             minWidth="500px"
                                             onDataSourceSelected={(d) => {
@@ -288,7 +288,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                                 </div>
                             }/>
                         </div>
-                        <div className="flex flex-row items-center justify-end p-4 bg-white dark:bg-[#202123]">
+                        <div className="flex flex-row items-center justify-end p-4 bg-white dark:bg-[#112e51]">
                             <button
                                 type="button"
                                 className="mr-2 w-full px-4 py-2 border rounded-lg shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300"

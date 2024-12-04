@@ -2,7 +2,7 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: #202123;
+    background-color: #112e51;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,7 +32,7 @@
     padding: 2px 5px;
     /* Add some padding for better text visibility */
     border-radius: 4px;
-    /* Optional: rounded corners for aesthetics */
+    /* Optional: corners for aesthetics */
 }
 
 .rename-input:focus {
@@ -70,6 +70,6 @@
 .darkModeInput::selection {
     background-color: #80bfff;
     /* A lighter selection color for dark mode */
-    color: #202123;
+    color: #112e51;
     /* Dark text color for selection */
 }

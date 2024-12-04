@@ -77,7 +77,7 @@ export const FileList: FC<Props> = ({ documents, setDocuments , documentStates, 
             {documents?.map((document, i) => (
                 <div
                     key={i}
-                    className={`${isComplete(document) ? 'bg-white' : 'bg-yellow-400'} flex flex-row items-center justify-between border bg-white rounded-md px-1 py-1 ml-1 mr-1 shadow-lg`}
+                    className={`${isComplete(document) ? 'bg-white' : 'bg-yellow-400'} flex flex-row items-center justify-between border bg-white px-1 py-1 ml-1 mr-1 shadow-lg`}
                     style={{ maxWidth: '200px' }}
                 >
                     {!isComplete(document) ?
@@ -101,7 +101,7 @@ export const FileList: FC<Props> = ({ documents, setDocuments , documentStates, 
                    </button>
 
                     <div className="ml-1">
-                        <p className={`truncate font-medium text-sm ${isComplete(document) ? 'text-gray-800' : 'text-gray-800'}`}
+                        <p className={`truncate font-medium text-sm ${isComplete(document) ? 'text-blue-500' : 'text-blue-500'}`}
                             style={{ maxWidth: '160px' }}>
                             {i+1}. {getLabel(document)}
                         </p>

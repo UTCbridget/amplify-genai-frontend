@@ -82,7 +82,7 @@ export const UserTagsList: FC<Props> = ({
                     {tags?.map((tag, i) => (
                         <div
                             key={i}
-                            className="cursor-pointer flex items-center justify-between bg-white dark:bg-neutral-200 rounded-md p-2 mr-2 mb-2 shadow-lg"
+                            className="cursor-pointer flex items-center justify-between bg-white dark:bg-neutral-200 p-2 mr-2 mb-2 shadow-lg"
                             style={{ flex: 'none', backgroundColor: stringToColor(tag) }} // Prevent flex-shrink which can distort items
                             onClick={(e) =>{
                                 e.preventDefault();
@@ -91,7 +91,7 @@ export const UserTagsList: FC<Props> = ({
                             }}
                         >
                             <button
-                                className="text-gray-800 transition-all color-gray-800"
+                                className="text-blue-500 transition-all color-gray-800"
 
                                 title="Select Tag"
                             >
@@ -99,7 +99,7 @@ export const UserTagsList: FC<Props> = ({
                             </button>
                             {/* Tag text container, without truncation to allow wrapping */}
                             <div className="ml-1">
-                                <p className="text-gray-800 font-medium text-md">
+                                <p className="text-blue-500 font-medium text-md">
                                     {tag}
                                 </p>
                             </div>
