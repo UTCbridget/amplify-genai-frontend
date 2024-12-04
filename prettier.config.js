@@ -22,4 +22,8 @@ module.exports = {
   ],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
+  proseWrap: 'always',
+  semi: true,
+  tabWidth: 2,
+  jsxSingleQuote: true,
 };

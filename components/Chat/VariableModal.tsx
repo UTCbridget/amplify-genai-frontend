@@ -465,7 +465,7 @@ export const VariableModal: FC<Props> = ({
         >
             <div
                 ref={modalRef}
-                className="dark:border-netural-400 inline-block max-h-[400px] transform overflow-y-auto rounded-lg border border-gray-300 bg-white px-4 pt-5 pb-4 text-left align-bottom shadow-xl transition-all dark:bg-[#202123] sm:my-8 sm:max-h-[600px] sm:w-full sm:max-w-lg sm:p-6 sm:align-middle"
+                className="dark:border-netural-400 inline-block max-h-[400px] transform overflow-y-auto rounded-lg border border-gray-300 bg-white px-4 pt-5 pb-4 text-left align-bottom shadow-xl transition-all dark:bg-[#112e51] sm:my-8 sm:max-h-[600px] sm:w-full sm:max-w-lg sm:p-6 sm:align-middle"
                 role="dialog"
             >
 
@@ -555,7 +555,7 @@ export const VariableModal: FC<Props> = ({
                             <div className="flex items-center">
                                 <input
                                     type="checkbox"
-                                    className="rounded border-gray-300 text-neutral-900 shadow-sm focus:border-neutral-500 focus:ring focus:ring-neutral-500 focus:ring-opacity-50"
+                                    className="border-gray-300 text-neutral-900 shadow-sm focus:border-neutral-500 focus:ring focus:ring-neutral-500 focus:ring-opacity-50"
                                     checked={variable.value === 'true'}
                                     onChange={(e) => handleChange(index, e.target.checked ? 'true' : 'false')}
                                 />
@@ -565,7 +565,7 @@ export const VariableModal: FC<Props> = ({
                         {isOptions(variable.key) && (
                             <div className="flex items-center">
                                 <select
-                                    className="rounded border-gray-300 text-neutral-900 shadow-sm focus:border-neutral-500 focus:ring focus:ring-neutral-500 focus:ring-opacity-50"
+                                    className="border-gray-300 text-neutral-900 shadow-sm focus:border-neutral-500 focus:ring focus:ring-neutral-500 focus:ring-opacity-50"
                                     value={variable.value}
                                     onChange={(e) => handleChange(index, e.target.value)}
                                 >
@@ -580,7 +580,7 @@ export const VariableModal: FC<Props> = ({
                         {isConversation(variable.key) && (
                             <div style={{ width: '200px' }} >
                                 <select
-                                    className="rounded truncate border-gray-300 text-neutral-900 shadow-sm focus:border-neutral-500 focus:ring focus:ring-neutral-500 focus:ring-opacity-50"
+                                    className="truncate border-gray-300 text-neutral-900 shadow-sm focus:border-neutral-500 focus:ring focus:ring-neutral-500 focus:ring-opacity-50"
                                     value={variable.value}
                                     style={{ width:'100%', maxWidth: '250px' }}
                                     onChange={(e) => handleChange(index, e.target.value)}
@@ -608,7 +608,7 @@ export const VariableModal: FC<Props> = ({
                         {isPromptTemplate(variable.key) && (
                             <div style={{ width: '200px' }} >
                                 <select
-                                    className="rounded truncate border-gray-300 text-neutral-900 shadow-sm focus:border-neutral-500 focus:ring focus:ring-neutral-500 focus:ring-opacity-50"
+                                    className="truncate border-gray-300 text-neutral-900 shadow-sm focus:border-neutral-500 focus:ring focus:ring-neutral-500 focus:ring-opacity-50"
                                     value={variable.value}
                                     style={{ width:'100%', maxWidth: '250px' }}
                                     onChange={(e) => handleChange(index, e.target.value)}
@@ -645,7 +645,7 @@ export const VariableModal: FC<Props> = ({
                 {showModelSelector && models && (
                     <div className="flex items-center">
                         <select
-                            className="rounded border-gray-300 text-neutral-900 shadow-sm focus:border-neutral-500 focus:ring focus:ring-neutral-500 focus:ring-opacity-50"
+                            className="border-gray-300 text-neutral-900 shadow-sm focus:border-neutral-500 focus:ring focus:ring-neutral-500 focus:ring-opacity-50"
                             value={selectedModel && selectedModel.id || ""}
                             onChange={(e) => handleModelChange(e.target.value)}
                         >

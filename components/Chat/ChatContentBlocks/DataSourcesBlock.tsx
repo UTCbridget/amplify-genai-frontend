@@ -24,7 +24,7 @@ export const DataSourcesBlock: React.FC<Props> = (
     }
 
     return (
-        <div className="flex flex-col w-full mt-5 text-gray-800">
+        <div className="flex flex-col w-full mt-5 text-blue-500">
         <div className="mr-3 dark:text-white">Included documents:</div>
 
         <div className="flex flex-col">

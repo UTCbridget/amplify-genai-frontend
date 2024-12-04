@@ -151,7 +151,7 @@ const WorkspaceList: FC<SharedItemsListProps> = () => {
             <div className="flex flex-row w-full items-center p-3">
                 <div className="w-full flex items-center">
                     <button
-                        className="text-sidebar flex w-full flex-shrink-0 cursor-pointer select-none items-center gap-3 rounded-md border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-gray-500/10"
+                        className="text-sidebar flex w-full flex-shrink-0 cursor-pointer select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-gray-500/10"
                         onClick={() => {
                             setIsModalOpen(true);
                         }}
@@ -162,7 +162,7 @@ const WorkspaceList: FC<SharedItemsListProps> = () => {
                 </div>
                 <div className="w-full flex items-center pl-2">
                     <button
-                        className="text-sidebar flex w-full flex-shrink-0 cursor-pointer select-none items-center gap-3 rounded-md border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-gray-500/10"
+                        className="text-sidebar flex w-full flex-shrink-0 cursor-pointer select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-gray-500/10"
                         onClick={() => {
 
                             let proceed = true;
@@ -231,7 +231,7 @@ const WorkspaceList: FC<SharedItemsListProps> = () => {
                                           content={items.map((item, index) => (
                             <button
                                 key={index}
-                                className="flex w-full cursor-pointer items-center gap-3 rounded-lg pb-2 pt-3 pr-2 text-sm transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-[#343541]/90"
+                                className="flex w-full cursor-pointer items-center gap-3 rounded-lg pb-2 pt-3 pr-2 text-sm transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-[#051228]/90"
                                 onClick={() => {
                                     handleFetchShare(item);
                                 }}

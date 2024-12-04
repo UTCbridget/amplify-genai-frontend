@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+svg.utc-logo {
+  max-width: 350px;
+  margin-bottom:36px;
+}
+
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
@@ -29,9 +36,59 @@
 }
 
 html {
-  background: #202123;
+  background: repeating-linear-gradient(-77deg,#0b1e33,#0b1e33 15px,#12263c 15px,#12263c 20px);
+}
+body, a, p, .__className_d65c78 {
+font-family: Raleway, sans-serif!important;
+font-size: 18px;
+}
+button, input, optgroup, select, textarea {
+  font-family: Raleway, sans-serif!important;
+}
+h1, h2, h3, h4, h5, h6 {font-family:Oswald, sans-serif;font-weight:bold;}
+h1 {
+  font-size: 3.25rem 
+}
+h2 {
+  font-size: 2.75rem 
+}
+h3{
+  font-size: 2.25rem 
+}
+h4{
+  font-size: 1.75rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6{
+ font-size: 1rem;
+}
+button {
+  border-radius: 0;
+}
+button.text-sidebar svg, button.settings-menu svg {
+  transition: all .4s ease-in-out;
+}
+button.text-sidebar:hover svg, button.settings-menu:hover svg {
+  transform: rotate(90deg);
 }
 
+.blue-stripes-bg {
+  background: repeating-linear-gradient(-77deg,#0b1e33,#0b1e33 15px,#12263c 15px,#12263c 20px)
+}
+.utc-chat-bg {
+  background: url('/mocsnet-background.jpg') no-repeat;
+}
+input:focus-visible, textarea:focus-visible {outline: 2px solid #fdb736;}
+
+.utc-custom-separator  {
+  margin-top:24px;
+}
+
+.utc-custom-separator path {
+  transform: scale(.2) translate(150%, -575%);
+}
 @media (max-width: 720px) {
   pre {
     width: calc(100vw - 110px);
@@ -41,3 +98,4 @@ html {
 pre:has(div.codeblock) {
   padding: 0;
 }
+

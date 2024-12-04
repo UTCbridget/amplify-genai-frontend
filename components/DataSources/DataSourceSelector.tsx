@@ -45,7 +45,7 @@ export const DataSourceSelector: FC<Props> = ({
     }
 
     return (
-        <div className="md:flex rounded-t-xl border dark:border-[#454652] bg-[#e5e7eb] dark:bg-[#343541]">
+        <div className="md:flex rounded-t-xl border dark:border-[#454652] bg-[#e5e7eb] dark:bg-[#051228]">
             <ul className="p-1 flex-column space-y space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
                 <li>
                     <a href="#"
@@ -118,7 +118,7 @@ export const DataSourceSelector: FC<Props> = ({
             </ul>
 
             <div
-                className="p-0 bg-[#ffffff] text-medium text-gray-500 dark:text-gray-400 dark:bg-[#343541] rounded-lg w-full"
+                className="p-0 bg-[#ffffff] text-medium text-gray-500 dark:text-gray-400 dark:bg-[#051228] rounded-lg w-full"
                 style={{minHeight: minHeight, minWidth: minWidth}}
             >
                 {selectedPage === "files" && (

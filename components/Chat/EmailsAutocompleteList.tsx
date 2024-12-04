@@ -95,7 +95,7 @@ const EmailModal: FC<EmailModalProps> = ({ isOpen, onClose, onSubmit, input, set
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
             <div className="fixed inset-0 z-10 overflow-hidden">
                 <div className="flex items-center justify-center min-h-screen pt-4 pb-20 text-center sm:block sm:p-0">
-                    <div className="inline-block overflow-y-auto  overflow-x-hidden rounded-lg border border-gray-300 bg-white px-4 pt-5 text-left align-bottom shadow-xl transition-all dark:bg-[#202123] sm:my-8 sm:w-full sm:max-w-[480px] sm:align-middle"
+                    <div className="inline-block overflow-y-auto  overflow-x-hidden rounded-lg border border-gray-300 bg-white px-4 pt-5 text-left align-bottom shadow-xl transition-all dark:bg-[#112e51] sm:my-8 sm:w-full sm:max-w-[480px] sm:align-middle"
                         style={{ transform: 'translateY(+22%)', position: 'relative' }}>
                         <div className="max-h-[calc(100vh-10rem)] p-0.5 overflow-y-auto">
                             {message}
@@ -127,12 +127,12 @@ const EmailModal: FC<EmailModalProps> = ({ isOpen, onClose, onSubmit, input, set
                                 />
                                 {suggestions.length > 0 && (
                                     <div ref={suggestionRef}  
-                                    className="sm:w-full sm:max-w-[440px] fixed z-50 border border-neutral-300 rounded overflow-y-auto bg-white dark:border-neutral-600 bg-neutral-100 dark:bg-[#202123]"
+                                    className="sm:w-full sm:max-w-[440px] fixed z-50 border border-neutral-300 overflow-y-auto bg-white dark:border-neutral-600 bg-neutral-100 dark:bg-[#112e51]"
                                     style={{ height: `${calculateHeight(suggestions.length)}px` }}>
                                         <ul className="suggestions-list">
                                         {suggestions.map((suggestion, index) => (
                                             <li key={index} onClick={() => handleSuggestionClick(suggestion)}
-                                            className="cursor-pointer p-1 border-b border-neutral-300 dark:border-b-neutral-600 hover:bg-neutral-200 dark:hover:bg-[#343541]/90">
+                                            className="cursor-pointer p-1 border-b border-neutral-300 dark:border-b-neutral-600 hover:bg-neutral-200 dark:hover:bg-[#051228]/90">
 
                                                 {suggestion}
                                             </li>
@@ -140,7 +140,7 @@ const EmailModal: FC<EmailModalProps> = ({ isOpen, onClose, onSubmit, input, set
                                         </ul>
                                 </div> 
                                 )}
-                            <div className="mt-2 flex flex-row items-center justify-end p-4 bg-white dark:bg-[#202123]">
+                            <div className="mt-2 flex flex-row items-center justify-end p-4 bg-white dark:bg-[#112e51]">
                                 <button
                                     type="button"
                                     className="mr-2 w-full px-4 py-2 border rounded-lg shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300"
@@ -217,11 +217,11 @@ export const EmailsAutocompleteList: FC<Props> = ({
                 {emails.map((email, index) => (
                     <div 
                         key={index}
-                        className="flex items-center justify-between bg-white dark:bg-neutral-200 rounded-md px-2 py-0 mr-2 mb-2 shadow-lg"
+                        className="flex items-center justify-between bg-white dark:bg-neutral-200 px-2 py-0 mr-2 mb-2 shadow-lg"
                         style={{ backgroundColor: stringToColor(email) }}
                     >
                         <button
-                            className="text-gray-800 transition-all"
+                            className="text-blue-500 transition-all"
                             onClick={(e) => {
                                 e.preventDefault();
                                 e.stopPropagation();
@@ -232,7 +232,7 @@ export const EmailsAutocompleteList: FC<Props> = ({
                             <IconCircleX size={17} />
                         </button>
                         <div className="ml-1">
-                            <p className="text-gray-800 font-medium text-sm">{email}</p>
+                            <p className="text-blue-500 font-medium text-sm">{email}</p>
                         </div>
                     </div>
                 ))}

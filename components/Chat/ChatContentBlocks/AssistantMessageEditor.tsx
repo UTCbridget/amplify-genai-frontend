@@ -61,7 +61,7 @@ const AssistantMessageEditor: React.FC<Props> = (
     return (<div className="flex w-full flex-col">
                                     <textarea
                                         ref={textareaRef}
-                                        className="w-full resize-none whitespace-pre-wrap border-none dark:bg-[#343541]"
+                                        className="w-full resize-none whitespace-pre-wrap border-none dark:bg-[#051228]"
                                         value={messageContent}
                                         onChange={handleInputChange}
                                         onKeyDown={handlePressEnter}
@@ -78,14 +78,14 @@ const AssistantMessageEditor: React.FC<Props> = (
                                     />
         <div className="mt-10 flex justify-center space-x-4">
             <button
-                className="h-[40px] rounded-md bg-blue-500 px-4 py-1 text-sm font-medium text-white enabled:hover:bg-blue-600 disabled:opacity-50"
+                className="h-[40px] bg-blue-500 px-4 py-1 text-sm font-medium text-white enabled:hover:bg-blue-600 disabled:opacity-50"
                 onClick={handleEditMessage}
                 disabled={messageContent.trim().length <= 0}
             >
                 {t('Save')}
             </button>
             <button
-                className="h-[40px] rounded-md border border-neutral-300 px-4 py-1 text-sm font-medium text-neutral-700 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800"
+                className="h-[40px] border border-neutral-300 px-4 py-1 text-sm font-medium text-neutral-700 hover:bg-neutral-100 dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800"
                 onClick={() => {
                     setMessageContent(message.content);
                     setIsEditing(false);

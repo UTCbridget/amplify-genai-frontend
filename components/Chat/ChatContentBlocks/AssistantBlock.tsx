@@ -259,7 +259,7 @@ const AssistantBlock: React.FC<AssistantProps> = ({definition}) => {
                                 </div>
                             </div>
                         }/>
-                        <button className="mt-4 w-full px-4 py-2 text-white bg-blue-500 rounded hover:bg-green-600"
+                        <button className="mt-4 w-full px-4 py-2 text-white bg-blue-500 hover:bg-green-600"
                                 onClick={handleCreateAssistant}
                         >
                             Create Assistant
