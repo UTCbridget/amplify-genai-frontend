@@ -545,7 +545,7 @@ const DataSourcesTableScrolling: FC<Props> = ({
                     colorScheme: lightMode, // or 'light', depending on your preference or state
                     colors: {
                         //gray: ["#333333","#333333","#333333","#333333","#333333","#333333","#333333","#333333"],
-                        dark: ["#dddddd", "#000000", "#000000", "#555765", "#343541", "#343541", "#343541", "#343541"]
+                        dark: ["#dddddd", "#000000", "#000000", "#555765", "#051228", "#051228", "#051228", "#051228"]
                     },
                     primaryShade: 1,
                     // You can also map Mantine's theme colors to match Tailwind's classes as needed

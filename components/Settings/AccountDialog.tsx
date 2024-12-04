@@ -131,7 +131,7 @@ export const AccountDialog: FC<Props> = ({ open, onClose }) => {
 
                     <div
                         ref={modalRef}
-                        className="dark:border-netural-400 inline-block max-h-[400px] transform overflow-y-auto rounded-lg border border-gray-300 bg-white px-4 pt-5 pb-4 text-left align-bottom shadow-xl transition-all dark:bg-[#202123] sm:my-8 sm:max-h-[600px] sm:w-full sm:max-w-lg sm:p-6 sm:align-middle"
+                        className="dark:border-netural-400 inline-block max-h-[400px] transform overflow-y-auto rounded-lg border border-gray-300 bg-white px-4 pt-5 pb-4 text-left align-bottom shadow-xl transition-all dark:bg-[#112e51] sm:my-8 sm:max-h-[600px] sm:w-full sm:max-w-lg sm:p-6 sm:align-middle"
                         role="dialog"
                     >
 
@@ -160,7 +160,7 @@ export const AccountDialog: FC<Props> = ({ open, onClose }) => {
                                         ref={accountNameRef}
                                         type="text"
                                         placeholder={'Account name'}
-                                        className="rounded border-gray-300 p-1 text-neutral-900 shadow-sm focus:border-neutral-500 w-full"
+                                        className="border-gray-300 p-1 text-neutral-900 shadow-sm focus:border-neutral-500 w-full"
 
                                     /></div>
                                     <div className="text-left ml-2 flex-grow min-w-0">
@@ -168,14 +168,14 @@ export const AccountDialog: FC<Props> = ({ open, onClose }) => {
                                             ref={accountIdRef}
                                             type="text"
                                             placeholder={'COA String'}
-                                            className="rounded border-gray-300 p-1 text-neutral-900 shadow-sm focus:border-neutral-500 focus:ring focus:ring-neutral-500 focus:ring-opacity-50 w-full"
+                                            className="border-gray-300 p-1 text-neutral-900 shadow-sm focus:border-neutral-500 focus:ring focus:ring-neutral-500 focus:ring-opacity-50 w-full"
 
                                         />
                                     </div>
                                     <div className="flex-shrink-0">
                                         <button
                                             type="button"
-                                            className="ml-2 px-3 py-1.5 text-white rounded bg-neutral-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-500"
+                                            className="ml-2 px-3 py-1.5 text-white bg-neutral-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-neutral-500"
                                             onClick={handleAddAccount}
                                         >
                                             <IconPlus size={18} />
@@ -205,7 +205,7 @@ export const AccountDialog: FC<Props> = ({ open, onClose }) => {
                                             {account.id !== noCoaAccount.id ? (
                                                 <button
                                                     type="button"
-                                                    className="px-2 py-1.5 text-sm bg-neutral-600 text-white rounded hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                                                    className="px-2 py-1.5 text-sm bg-neutral-600 text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                                                     onClick={() => handleDeleteAccount(account.id)}
                                                 >
                                                     <IconTrashX size={18} />

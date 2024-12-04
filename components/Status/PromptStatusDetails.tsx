@@ -24,7 +24,7 @@ export const PromptStatusDetails: React.FC<PromptStatusDetailsProps> = ({ status
                 return (
                     (href && href.startsWith("#")) ?
                         <button
-                            className="px-4 py-2 text-white bg-blue-500 rounded hover:bg-green-600"
+                            className="px-4 py-2 text-white bg-blue-500 hover:bg-green-600"
                             onClick={(e) => {
                                 e.preventDefault();
                                 e.stopPropagation();

@@ -52,7 +52,7 @@ const AssistantsInUse: React.FC<Props> = ({assistants,assistantsChanged}) => {
             {assistants?.map((assistant, i) => (
                 <div
                     key={i}
-                    className={`bg-white flex flex-row items-center justify-between border bg-white rounded-md px-1 py-1 ml-1 mr-1 shadow-lg`}
+                    className={`bg-white flex flex-row items-center justify-between border bg-white px-1 py-1 ml-1 mr-1 shadow-lg`}
                     style={{ maxWidth: '300px' }}
                 >
                     <button
@@ -69,9 +69,9 @@ const AssistantsInUse: React.FC<Props> = ({assistants,assistantsChanged}) => {
 
                     <div className="ml-1 flex flex-row items-center">
                         <div>
-                            <IconAt size="18" className="text-gray-800"/>
+                            <IconAt size="18" className="text-blue-500"/>
                         </div>
-                        <div className={`truncate font-medium text-sm text-gray-800`}
+                        <div className={`truncate font-medium text-sm text-blue-500`}
                            style={{ maxWidth: '300px' }}>
                             {getLabel(assistant)}
                         </div>

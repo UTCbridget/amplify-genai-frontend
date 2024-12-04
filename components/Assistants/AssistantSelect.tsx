@@ -63,7 +63,7 @@ export const AssistantSelect: FC<Props> = ({
 
     return (
         <div className="flex flex-col"> 
-            <div className="mb-1 w-full rounded border border-neutral-200 bg-transparent pr-2 text-neutral-900 dark:border-neutral-600 dark:text-white">
+            <div className="mb-1 w-full border border-neutral-200 bg-transparent pr-2 text-neutral-900 dark:border-neutral-600 dark:text-white">
                 <select
                     ref={selectRef}
                     className="w-full cursor-pointer bg-transparent p-2"
@@ -83,7 +83,7 @@ export const AssistantSelect: FC<Props> = ({
                     <option
                         key="amplify"
                         value="amplify"
-                        className="dark:bg-[#343541] dark:text-white"
+                        className="dark:bg-[#051228] dark:text-white"
                     >
                         Standard Conversation
                     </option>
@@ -92,7 +92,7 @@ export const AssistantSelect: FC<Props> = ({
                         <option
                             key={a.id}
                             value={a.id}
-                            className="dark:bg-[#343541] dark:text-white"
+                            className="dark:bg-[#051228] dark:text-white"
                         >
                             {a.definition.name}
                         </option>

@@ -76,11 +76,11 @@ export const TagsList: FC<Props> = (
                 {tags?.map((tag, i) => (
                     <div
                         key={i}
-                        className="flex items-center justify-between bg-white dark:bg-neutral-200 rounded-md px-2 py-0 mr-2 mb-2 shadow-lg"
+                        className="flex items-center justify-between bg-white dark:bg-neutral-200 px-2 py-0 mr-2 mb-2 shadow-lg"
                         style={{ flex: 'none', backgroundColor: stringToColor(tag) }} // Prevent flex-shrink which can distort items
                     >
                         <button
-                            className="text-gray-800 transition-all color-gray-800"
+                            className="text-blue-500 transition-all color-gray-800"
                             onClick={(e) =>{
                                 e.preventDefault();
                                 e.stopPropagation();
@@ -93,7 +93,7 @@ export const TagsList: FC<Props> = (
                         </button>
                         {/* Tag text container, without truncation to allow wrapping */}
                         <div className="ml-1">
-                            <p className="text-gray-800 font-medium text-sm">
+                            <p className="text-blue-500 font-medium text-sm">
                                 {tag}
                             </p>
                         </div>

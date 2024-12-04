@@ -142,7 +142,7 @@ export const ConversationComponent = ({ conversation}: Props) => {
   return (
     <div className="relative flex items-center">
       {isRenaming && selectedConversation?.id === conversation.id ? (
-        <div className="flex w-full items-center gap-3 rounded-lg bg-neutral-200 dark:bg-[#343541]/90 p-3">
+        <div className="flex w-full items-center gap-3 rounded-lg bg-neutral-200 dark:bg-[#051228]/90 p-3">
           {isLocalConversation(conversation) ? <IconMessage size={18} /> 
                                              :  <div>
                                                   <IconCloud className="block dark:hidden" size={18} />
@@ -159,11 +159,11 @@ export const ConversationComponent = ({ conversation}: Props) => {
         </div>
       ) : (
         <button
-          className={`flex w-full cursor-pointer items-center gap-3 rounded-lg p-3 text-sm transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-[#343541]/90 ${
+          className={`flex w-full cursor-pointer items-center gap-3 rounded-lg p-3 text-sm transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-[#051228]/90 ${
             messageIsStreaming ? 'disabled:cursor-not-allowed' : ''
           } ${
             selectedConversation?.id === conversation.id
-              ? 'bg-neutral-200 dark:bg-[#343541]/90'
+              ? 'bg-neutral-200 dark:bg-[#051228]/90'
               : ''
           }`}
           onClick={() => handleSelectConversation(conversation)}
