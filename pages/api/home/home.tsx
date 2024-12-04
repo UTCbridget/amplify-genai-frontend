@@ -1435,7 +1435,7 @@ const Home = ({
     }
 };
 export default Home;
-/*
+
 export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
     const defaultModelId =
         (process.env.DEFAULT_MODEL &&
@@ -1478,4 +1478,3 @@ export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
         },
     };
 };
-*/
