@@ -100,8 +100,8 @@ export const RemoteMessage: FC<Props> = memo(({
     return (
         <div
             className={`group md:px-0 ${message.role === 'assistant'
-                ? 'border-b border-black/10 bg-gray-50 text-blue-500 dark:border-gray-900/50 dark:bg-[#444654] dark:text-white'
-                : 'border-b border-black/10 bg-white text-blue-500 dark:border-gray-900/50 dark:bg-[#051228] dark:text-white'
+                ? 'border-b border-black/10 bg-gray-50 text-blue-500 dark:border-gray-900/50 dark:bg-blue-500 dark:text-white'
+                : 'border-b border-black/10 bg-white text-blue-500 dark:border-gray-900/50 dark:bg-transparent dark:text-white'
             }`}
             style={{ overflowWrap: 'anywhere' }}
         >

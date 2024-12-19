@@ -135,14 +135,14 @@ const Folder = ({
             onMouseLeave={() => setIsHovered(false)}
         >
           {isRenaming ? (
-            <div className="flex w-full items-center gap-3 bg-neutral-200 dark:bg-[#051228]/90 p-3 rounded">
+            <div className="flex w-full items-center gap-3 bg-neutral-200 bg-transparent p-3">
               {isOpen ? (
-                <IconCaretDown size={18} />
+                <IconCaretDown size={18} className="dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>
               ) : (
-                <IconCaretRight size={18} />
+                <IconCaretRight size={18} className="dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>
               )}
               <input
-                className="mr-12 flex-1 overflow-hidden overflow-ellipsis border-neutral-400 bg-transparent text-left text-[12.5px] leading-3 dark:text-white outline-none focus:border-neutral-100"
+                className="mr-12 flex-1 overflow-hidden overflow-ellipsis border-neutral-400 bg-transparent text-left text-[12.5px] leading-3 dark:text-neutral-400 outline-none focus:border-neutral-100"
                 type="text"
                 value={renameValue}
                 onChange={(e) => setRenameValue(e.target.value)}
@@ -152,7 +152,7 @@ const Folder = ({
             </div>
           ) : (
             <button
-              className={`flex w-full cursor-pointer items-center gap-3 rounded-lg p-3 text-sm transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-[#051228]/90`}
+              className={`folder-button flex w-full cursor-pointer items-center gap-3  p-3 text-sm transition-colors duration-200 hover:bg-neutral-200 dark:text-neutral-400 dark:hover:bg-blue-500 dark:hover:text-yellow-500`}
               onClick={() => setIsOpen(!isOpen)}
               onDrop={(e) => dropHandler(e)}
               onDragOver={allowDrop}
@@ -161,9 +161,9 @@ const Folder = ({
               title={isOpen ? "Collapse folder" : "Expand folder"}
             >
               {isOpen ? (
-                <IconCaretDown size={18} />
+                <IconCaretDown size={18} className="dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>
               ) : (
-                <IconCaretRight size={18} />
+                <IconCaretRight size={18} className="dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>
               )}
 
               <div className="relative max-h-5 flex-1 overflow-hidden text-ellipsis whitespace-nowrap break-all text-left text-[12.5px] leading-3">
@@ -173,7 +173,7 @@ const Folder = ({
           )}
 
           {(isDeleting || isRenaming) && (
-            <div className="absolute right-1 z-10 flex bg-neutral-200 dark:bg-[#051228]/90 rounded">
+            <div className="absolute right-1 z-10 flex bg-neutral-200 bg-transparent dark:hover:bg-blue-500 dark:hover:text-yellow-500">
               <SidebarActionButton
                 handleClick={(e) => {
                   e.stopPropagation();
@@ -188,7 +188,7 @@ const Folder = ({
                   setIsRenaming(false);
                 }}
               >
-                <IconCheck size={18} />
+                <IconCheck size={18} className="dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>
               </SidebarActionButton>
               <SidebarActionButton
                 handleClick={(e) => {
@@ -197,7 +197,7 @@ const Folder = ({
                   setIsRenaming(false);
                 }}
               >
-                <IconX size={18} />
+                <IconX size={18} className="dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>
               </SidebarActionButton>
             </div>
           )}
@@ -215,7 +215,7 @@ const Folder = ({
           )}
 
           {!isDeleting && !isRenaming && isHovered && !checkFolders && (
-            <div className="absolute right-1 z-10 flex bg-neutral-200 dark:bg-[#051228]/90 rounded">
+            <div className="absolute right-1 z-10 flex bg-neutral-200 bg-transparent dark:hover:bg-blue-500 dark:hover:text-yellow-500">
               <SidebarActionButton
                 handleClick={(e) => {
                   e.stopPropagation();
@@ -224,7 +224,7 @@ const Folder = ({
                 }}
                 title="Rename Folder"
               >
-                <IconPencil size={18} />
+                <IconPencil size={18} className="dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>
               </SidebarActionButton>
 
               <SidebarActionButton
@@ -234,7 +234,7 @@ const Folder = ({
                 }}
                 title="Delete Folder"
               >
-                <IconTrash size={18} />
+                <IconTrash size={18} className="dark:hover:bg-blue-500 dark:hover:text-yellow-500" />
               </SidebarActionButton>
             </div>
           )}

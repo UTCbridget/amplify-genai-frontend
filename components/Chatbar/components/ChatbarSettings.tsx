@@ -81,7 +81,7 @@ export const ChatbarSettings = () => {
             <SidebarButton
                 text={t('Send Feedback')}
                 icon={<IconHelp size={18} />}
-                onClick={() => window.location.href = 'mailto:amplify@vanderbilt.edu'}
+                onClick={() => window.location.href = 'mailto:ithelp@utc.edu'}
             />
 
 

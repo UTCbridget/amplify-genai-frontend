@@ -943,12 +943,12 @@ const Home = ({
             if (hasAcceptedDataDisclosure === null) { // Decision is still being checked, render a loading indicator
                 return (
                     <main
-                        className={`flex h-screen w-screen flex-col text-sm text-white dark:text-white ${lightMode}`}
+                        className={`main-1 flex h-screen w-screen flex-col text-sm text-white dark:text-white ${lightMode}`}
                     >
                         <div
                             className="flex flex-col items-center justify-center min-h-screen text-center text-white dark:text-white">
                             <Loader />
-                            <h1 className="mb-4 text-2xl font-bold">
+                            <h1 className="mb-4 text-2xl font-bold text-yellow-500">
                                 Loading...
                             </h1>
                         </div>
@@ -956,16 +956,16 @@ const Home = ({
             } else if (!hasAcceptedDataDisclosure) { // User has not accepted the data disclosure agreement, do not render page content
                 return (
                     <main
-                        className={`flex h-screen w-screen flex-col text-sm ${lightMode}`}
+                        className={`main-2 flex h-screen w-screen flex-col text-sm ${lightMode}`}
                     >
                         <div
-                            className="flex flex-col items-center justify-center min-h-screen text-center dark:bg-[#444654] bg-white dark:text-white text-black">
+                            className="disclosure-wrapper flex flex-col items-center justify-center min-h-screen text-center dark:text-white text-black">
                             <h1 className="text-2xl font-bold dark:text-white">
-                                Amplify Data Disclosure Agreement
+                                ChattUTC Data Disclosure Agreement
                             </h1>
                             <a href={latestDataDisclosureUrlPDF} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', marginBottom: '10px' }}>Download the data disclosure agreement</a>
                             <div
-                                className="data-disclosure dark:bg-[#051228] bg-gray-50 dark:text-white text-black text-left"
+                                className="data-disclosure bg-transparent dark:text-white text-black text-left"
                                 style={{
                                     overflowY: 'scroll',
                                     border: '1px solid #ccc',
@@ -1032,7 +1032,7 @@ const Home = ({
                                 }}
                                 style={{
                                     backgroundColor: 'white',
-                                    color: 'black',
+                                    color: '#112e51',
                                     fontWeight: 'bold',
                                     padding: '4px 20px',
                                     borderRadius: '5px',
@@ -1040,7 +1040,7 @@ const Home = ({
                                     cursor: 'pointer',
                                     transition: 'background-color 0.3s ease-in-out',
                                 }}
-                                onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#48bb78'}
+                                onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#fdb736'}
                                 onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'white'}
                             >
                                 Accept
@@ -1086,16 +1086,16 @@ const Home = ({
                 </Head>
                 {selectedConversation && (
                     <main
-                        className={`flex h-screen w-screen flex-col text-sm text-white dark:text-white ${lightMode}`}
+                        className={`main-3 flex h-screen w-screen flex-col text-sm text-white dark:text-white ${lightMode}`}
                     >
-                        <div className="fixed top-0 w-full sm:hidden">
+                        <div className="nav-bar fixed top-0 w-full sm:hidden">
                             <Navbar
                                 selectedConversation={selectedConversation}
                                 onNewConversation={handleNewConversation}
                             />
                         </div>
 
-                        <div className="flex h-full w-full pt-[48px] sm:pt-0">
+                        <div className="flex h-full w-full pt-[48px] sm:pt-0 bg-[url('/chattutc-light-bg.jpg')] dark:bg-[url('/chattutc-dark-bg.jpg')] bg-cover bg-right">
 
                             <TabSidebar
                                 side={"left"}
@@ -1158,7 +1158,7 @@ const Home = ({
     } else if (isLoading) {
         return (
             <main
-                className={`flex h-screen w-screen flex-col text-sm text-white dark:text-white ${lightMode}`}
+                className={`main-4 flex h-screen w-screen flex-col text-sm text-white dark:text-white ${lightMode}`}
             >
                 <div
                     className="flex flex-col items-center justify-center min-h-screen text-center text-white dark:text-white">
@@ -1173,11 +1173,11 @@ const Home = ({
     } else {
         return (
             <main
-                className={`flex h-screen w-screen flex-col text-sm text-white dark:text-white ${lightMode}`}
+                className={`main-5 flex h-screen w-screen flex-col text-sm text-white dark:text-white ${lightMode}`}
             >
                 <div
-                    className="flex flex-col items-center justify-center min-h-screen text-center text-white dark:text-white">
-                    
+                    className="flex flex-col items-center justify-center min-h-screen text-center text-white dark:text-white bg-utclogin">
+                    <img src="/chattutc-animation.gif" alt='atom animation'></img>
                     <svg className="utc-logo" viewBox="0 0 325 39.4">
                     <g>
                         <path fill="#fff" d="M57.9,8.1c0,1.2,0.1,1.4,0.4,1.8c0.3,0.4,0.7,0.6,1.3,0.6c0.2,0,0.3,0.1,0.3,0.2c0,0.2,0,0.2-0.2,0.2

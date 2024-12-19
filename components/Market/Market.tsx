@@ -301,10 +301,10 @@ export const Market = ({items}: Props) => {
 
     function getSectionImage(index: number) {
         const sectionImages: string[] = [
-            "https://www.vanderbilt.edu/wp-content/uploads/sites/3/2021/04/bronson-ingram.jpeg",
-            "https://www.goodyclancy.com/wp-content/uploads/2023/06/Vanderbilt_Warren-and-Moore_exterior-1_Goody-Clancy.jpg",
-            "https://cdn.vanderbilt.edu/vu-URL/wp-content/uploads/sites/97/2021/09/19231133/Local-Color-campus-shot.jpg",
-            "https://cdn.vanderbilt.edu/vu-URL/wp-content/uploads/sites/97/2021/09/19231133/Local-Color-campus-shot.jpg",
+            "https://www.utc.edu/sites/default/files/2021-03/utc-chamberlain-landscape.jpg",
+            "https://www.utc.edu/sites/default/files/2021-03/chamberlain-sunset.jpg",
+            "https://www.utc.edu/sites/default/files/styles/utc_hero_large/public/2021-05/drone-shot-of-utc-campus.webp",
+            "https://www.utc.edu/sites/default/files/2021-03/memorial-sign-landscape.jpg",
         ];
 
         // use mod to safely lookup and return a seciton iamge
@@ -345,14 +345,14 @@ export const Market = ({items}: Props) => {
         return item.tags.length == 0 ?
             (<span
                 key={"none"}
-                className={"inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border-2 m-1 dark:text-white text-gray-400"}
+                className={"inline-flex items-center px-2.5 py-0.5  text-xs font-medium border-2 m-1 dark:text-white text-gray-400"}
             >
                 None
             </span>) :
             item.tags.map((tag) => (
             <span
                 key={tag}
-                className={"inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border-2 m-1 dark:text-white text-gray-400"}
+                className={"inline-flex items-center px-2.5 py-0.5  text-xs font-medium border-2 m-1 dark:text-white text-gray-400"}
             >
                 {tag}
             </span>
@@ -377,9 +377,9 @@ export const Market = ({items}: Props) => {
     }
 
     const startTutorial = () => {
-        const rootPromptContent = `Act as a intelligent guide helping the user to figure out "Amplify", which is a new interface to Generative AI. The tool is open source and maintained at Vanderbilt by Jules White, Allen Karns, and Max Moundas in the Chancellor's Office. Amplify is based on the fantastic open source Chatbot UI created by Mckay Wrigley. Please direct any questions or issues with the tool to amplify@vanderbilt.edu.
+        const rootPromptContent = `Act as a intelligent guide helping the user to figure out "ChattUTC", which is a new interface to Generative AI. The tool is based on the open sourced "Amplify" app, maintained at Vanderbilt by Jules White, Allen Karns, and Max Moundas in the Chancellor's Office. Amplify is based on the open source Chatbot UI created by Mckay Wrigley. Please direct any questions or issues with the tool to ithelp@utc.edu.
 
-In general, you should not open Amplify in multiple browser tabs. If you would like to open it in different browser tabs, do it in separate "private browsing" or "incognito tabs". 
+In general, you should not open ChattUTC in multiple browser tabs. If you would like to open it in different browser tabs, do it in separate "private browsing" or "incognito tabs". 
 
 Most of your work is saved locally in your browser until you save it to a workspace. If you clear your browser's history and have not saved the workspace, you will lose any changes.
 
@@ -417,25 +417,25 @@ You can mouse over any message and see copy and edit buttons. The copy button wi
 
 The tool can generate a number of diagrams and visualizations. To try this out, ask it "Please generate a random flow chart and a random visualization". It doesn't always get things right, so if you see "Loading..." after it finishes providing its response, it means it made a mistake. You should ask it to try again and tell it that there was an error in the diagram or visualization.
 
-You want to go through the features of Amplify with the user one by one. Go slow and explain things based on where the user will see them in the interface. This tutorial that you are giving them is taking place in a Chat. If you tell them to go open the Marketplace, make sure and tell them how to get back to this chat to continue the tutorial. Ask questions to make sure the user is understanding what you are telling them (it shouldn't be a quiz or burdensome, just quick check-ins). Try to make each answer 2-3 paragraphs or less. Don't generate long outlines for an entire panel at once. Instead, do something like tell them about the "left panel" and then say, when you are ready, I will tell you about the first feature in this panel. Go through things one small item at a time.
+You want to go through the features of ChattUTC with the user one by one. Go slow and explain things based on where the user will see them in the interface. This tutorial that you are giving them is taking place in a Chat. If you tell them to go open the Marketplace, make sure and tell them how to get back to this chat to continue the tutorial. Ask questions to make sure the user is understanding what you are telling them (it shouldn't be a quiz or burdensome, just quick check-ins). Try to make each answer 2-3 paragraphs or less. Don't generate long outlines for an entire panel at once. Instead, do something like tell them about the "left panel" and then say, when you are ready, I will tell you about the first feature in this panel. Go through things one small item at a time.
 If people need help with prompt engineering, which is how you converse effectively with these types of tools, they can take a free course: Prompt Engineering for ChatGPT https://coursera.org/learn/prompt-engineering. 
 `;
 
         const rootPrompt = {
             id: "__amplify_tutorial_root",
-            name: "Amplify Tutorial",
-            description: "This is a tutorial that walks you through the features of Amplify.",
+            name: "ChattUTC Tutorial",
+            description: "This is a tutorial that walks you through the features of ChattUTC.",
             content: rootPromptContent,
-            tags: ["amplify-tutorial"],
+            tags: ["chattutc-tutorial"],
             type: MessageType.ROOT,
             folderId:"__amplify_tutorial",
         }
 
         const startTutorialPrompt = {
             id: "__amplify_tutorial_start",
-            name: "Start Amplify Tutorial",
-            description: "This is a prompt that starts the Amplify tutorial.",
-            content: "Please give me a tutorial of Amplify and start by telling me about what it is, who develops it, and how to get help outside of this tutorial.",
+            name: "Start ChattUTC Tutorial",
+            description: "This is a prompt that starts the ChattUTC tutorial.",
+            content: "Please give me a tutorial of ChattUTC and start by telling me about what it is, who develops it, and how to get help outside of this tutorial.",
             type: MessageType.PROMPT,
             data: {
                 rootPromptId: rootPrompt.id,
@@ -445,8 +445,8 @@ If people need help with prompt engineering, which is how you converse effective
 
         const tutorialFolder = {
             id: "__amplify_tutorial",
-            name: "Amplify Tutorial",
-            description: "This is a folder that contains the Amplify tutorial.",
+            name: "ChattUTC Tutorial",
+            description: "This is a folder that contains the ChattUTC tutorial.",
             type: "prompt",
         }
 
@@ -568,7 +568,7 @@ If people need help with prompt engineering, which is how you converse effective
 
 // @ts-ignore
     return (
-            <div className="relative flex-1 overflow-hidden bg-white dark:bg-[#051228]">
+            <div className="relative flex-1 overflow-hidden bg-white dark:bg-transparent">
                 <>
                     <div
                         className="max-h-full overflow-x-hidden"
@@ -646,7 +646,7 @@ If people need help with prompt engineering, which is how you converse effective
                                             handleGetItem(showExample.item);
                                         }
                                         }
-                                        className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                        className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                         <IconDownload/> Get
                                     </button>
 
@@ -657,7 +657,7 @@ If people need help with prompt engineering, which is how you converse effective
                                             handleTryItem(showExample.item);
                                         }
                                         }
-                                        className="ml-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-neutral-700 rounded-lg hover:bg-neutral-800 focus:ring-4 focus:outline-none focus:ring-neutral-300 dark:bg-neutral-600 dark:hover:bg-neutral-700 dark:focus:ring-neutral-800">
+                                        className="ml-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-neutral-700  hover:bg-neutral-800 focus:ring-4 focus:outline-none focus:ring-neutral-300 dark:bg-neutral-600 dark:hover:bg-neutral-700 dark:focus:ring-neutral-800">
                                         <IconRocket/> Try It
                                     </button>
                                     </div>
@@ -667,7 +667,7 @@ If people need help with prompt engineering, which is how you converse effective
                                             handleNavCategory("");
                                         }
                                         }
-                                        className="mt-6 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-neutral-700 rounded-lg hover:bg-neutral-800 focus:ring-4 focus:outline-none focus:ring-neutral-300 dark:bg-neutral-600 dark:hover:bg-neutral-700 dark:focus:ring-neutral-800">
+                                        className="mt-6 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-neutral-700  hover:bg-neutral-800 focus:ring-4 focus:outline-none focus:ring-neutral-300 dark:bg-neutral-600 dark:hover:bg-neutral-700 dark:focus:ring-neutral-800">
                                         <IconHome/> Back Home
                                     </button>
                                     </div>
@@ -675,7 +675,7 @@ If people need help with prompt engineering, which is how you converse effective
                                 </div>
                                 <div className="col-span-1">
                                     <div
-                                        className="w-full lg:max-w-xl pl-2 pr-6 py-6 space-y-8 sm:p-8 bg-white rounded-lg shadow-xl text-gray-900 dark:text-white dark:bg-gray-800">
+                                        className="w-full lg:max-w-xl pl-2 pr-6 py-6 space-y-8 sm:p-8 bg-white  shadow-xl text-gray-900 dark:text-white dark:bg-gray-800">
                                         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                                             About
                                         </h2>
@@ -706,7 +706,7 @@ If people need help with prompt engineering, which is how you converse effective
 
 
                         <section
-                            className="bg-center bg-no-repeat bg-[url('https://www.vanderbilt.edu/undergraduate-education/wp-content/uploads/sites/407/2023/11/1159c2beb1aa091607931130aa8bf659-1200x900-c-default.jpg')] bg-gray-700 bg-blend-multiply">
+                            className="bg-center bg-no-repeat bg-[url('https://www.utc.edu/sites/default/files/2021-03/utc-chamberlain-landscape.jpg')] bg-gray-700 bg-blend-multiply">
                             <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
                                 <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
                                     Examples
@@ -718,7 +718,7 @@ If people need help with prompt engineering, which is how you converse effective
                                 </p>
                                 <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
                                     {/*<a href="#"*/}
-                                    {/*   className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">*/}
+                                    {/*   className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">*/}
                                     {/*    Get started*/}
                                     {/*    <svg className="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true"*/}
                                     {/*         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">*/}
@@ -727,7 +727,7 @@ If people need help with prompt engineering, which is how you converse effective
                                     {/*    </svg>*/}
                                     {/*</a>*/}
                                     {/*<a href="#"*/}
-                                    {/*   className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">*/}
+                                    {/*   className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white  border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">*/}
                                     {/*    Learn more*/}
                                     {/*</a>*/}
                                 </div>
@@ -822,7 +822,7 @@ If people need help with prompt engineering, which is how you converse effective
                                             on top of the prompt engineering of others to accelerate your own work.
                                         </p>
                                         <button
-                                            className="w-full px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                            className="w-full px-5 py-3 text-base font-medium text-center text-white bg-blue-700  hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                             onClick={(e) => {
                                                e.stopPropagation();
                                                e.preventDefault();
@@ -849,19 +849,19 @@ If people need help with prompt engineering, which is how you converse effective
                                     </div>
                                     <div>
                                         <div
-                                            className="w-full lg:max-w-xl p-6 space-y-8 sm:p-8 bg-white rounded-lg shadow-xl dark:bg-gray-800">
+                                            className="w-full lg:max-w-xl p-6 space-y-8 sm:p-8 bg-white  shadow-xl dark:bg-gray-800">
                                             <h2 className="text-2xl font-bold text-gray-900 dark:text-white text-center">
-                                                AI-Generated Prompts & Tools for Vanderbilt
+                                                AI-Generated Prompts & Tools for UTC
                                             </h2>
                                             <div>
                                                 <h4 className="mb-6 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
-                                                    We asked GPT-4 to think of prompts that would be helpful to Vanderbilt
+                                                    We asked GPT-4 to think of prompts that would be helpful to UTC
                                                     faculty and staff.</h4>
                                             </div>
                                             <div>
                                             <h4 className="mb-6 text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
                                                 We then taught GPT-4 how to write reusable prompt
-                                                templates for Amplify. Most of what you see in the market is GPT-4&apos;s
+                                                templates for ChattUTC. Most of what you see in the market is GPT-4&apos;s
                                                 prompts to help you. We hope you find them useful.</h4>
                                             </div>
                                             {/*<h2 className="text-2xl font-bold text-gray-900 dark:text-white">*/}
@@ -875,13 +875,13 @@ If people need help with prompt engineering, which is how you converse effective
                                                 {/*    <input type="text" name="keywords" id="keywords"*/}
                                                 {/*           value={searchStr}*/}
                                                 {/*           onChange={(e) => setSearchStr(e.target.value)}*/}
-                                                {/*           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"*/}
+                                                {/*           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"*/}
                                                 {/*           placeholder="Enter your search terms..." required/>*/}
                                                 {/*</div>*/}
                                                 {/*<div>*/}
                                                 {/*    <label htmlFor="category"*/}
                                                 {/*           className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>*/}
-                                                {/*    <select id="category" className="text-black text-xl rounded"*/}
+                                                {/*    <select id="category" className="text-black text-xl"*/}
                                                 {/*            onChange={(e) => setSearchCategory(e.target.value)}*/}
                                                 {/*            value={searchCategory}*/}
                                                 {/*    >*/}
@@ -894,14 +894,14 @@ If people need help with prompt engineering, which is how you converse effective
                                                 {/*</div>*/}
 
                                                 <div>
-                                                <a href="mailto:jules.white@vanderbilt.edu?subject=AI-Generated%40Prompts"
-                                                        className="w-full px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                <a href="mailto:ithelp@utc.edu?subject=AI-Generated%40Prompts"
+                                                        className="w-full px-5 py-3 text-base font-medium text-center text-white bg-blue-700  hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:w-auto dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                                     Send Feedback
                                                 </a>
                                                 </div>
                                                 <div>
-                                                <a href="mailto:jules.white@vanderbilt.edu?subject=AI-Generated%40Prompts"
-                                                   className="w-full px-5 py-3 text-base font-medium text-center text-white bg-purple-700 rounded-lg hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 sm:w-auto dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">
+                                                <a href="mailto:ithelp@utc.edu?subject=AI-Generated%40Prompts"
+                                                   className="w-full px-5 py-3 text-base font-medium text-center text-white bg-purple-700  hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 sm:w-auto dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800">
                                                     Request a New Category
                                                 </a>
                                                 </div>
@@ -948,7 +948,7 @@ If people need help with prompt engineering, which is how you converse effective
                                                                  setSearchCategory(item.id);
                                                              }
                                                              }
-                                                             className="m-3 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                                                             className="m-3 max-w-sm bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700">
                                                             <div className="">
 
                                                             </div>
@@ -989,18 +989,18 @@ If people need help with prompt engineering, which is how you converse effective
                                                 <div className="grid grid-cols-3 gap-1 content-start">
                                                     {category.items?.map((item, index) => (
                                                         <div key={item.id}
-                                                             className="m-3 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                                                             className="m-3 max-w-sm bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700">
                                                             <div className="">
 
                                                             </div>
                                                             <div className="relative max-w-sm">
                                                                 <div className="w-full h-full">
-                                                                    <img className="rounded-t-lg"
-                                                                         src="https://admissions.vanderbilt.edu/wp-content/uploads/sites/4/2021/06/20181108JR003-scaled.jpg"
+                                                                    <img className=""
+                                                                         src="https://www.utc.edu/sites/default/files/styles/utc_hero_large/public/2021-05/drone-shot-of-utc-campus.webp"
                                                                          alt=""/>
                                                                 </div>
                                                                 <div
-                                                                    className="m-3 absolute inset-x-0 bottom-0 left-0 h-12 w-12 p-1 rounded-full border-2">
+                                                                    className="m-3 absolute inset-x-0 bottom-0 left-0 h-12 w-12 p-1  border-2">
                                                                     {getMarketItemIcon(item)}
                                                                 </div>
                                                             </div>
@@ -1037,7 +1037,7 @@ If people need help with prompt engineering, which is how you converse effective
                                                                         handleViewItemDetails(item);
                                                                     }
                                                                     }
-                                                                    className="m-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                                    className="m-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                                                     <IconChartArcs3/> Details &amp; Examples
                                                                 </button>
 
@@ -1048,7 +1048,7 @@ If people need help with prompt engineering, which is how you converse effective
                                                                         handleTryItem(item);
                                                                     }
                                                                     }
-                                                                    className="m-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-neutral-700 rounded-lg hover:bg-neutral-800 focus:ring-4 focus:outline-none focus:ring-neutral-300 dark:bg-neutral-600 dark:hover:bg-neutral-700 dark:focus:ring-neutral-800">
+                                                                    className="m-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-neutral-700  hover:bg-neutral-800 focus:ring-4 focus:outline-none focus:ring-neutral-300 dark:bg-neutral-600 dark:hover:bg-neutral-700 dark:focus:ring-neutral-800">
                                                                     <IconRocket/> Try It
                                                                 </button>
 
@@ -1059,7 +1059,7 @@ If people need help with prompt engineering, which is how you converse effective
                                                                         handleGetItem(item);
                                                                     }
                                                                     }
-                                                                    className="m-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                                    className="m-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                                                     <IconDownload/> Get
                                                                 </button>
 
@@ -1071,7 +1071,7 @@ If people need help with prompt engineering, which is how you converse effective
                                                                             handleMarketItemDelete(item);
                                                                         }
                                                                         }
-                                                                        className="m-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                                        className="m-2 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                                                         Delete
                                                                     </button>
                                                                     )}
@@ -1115,18 +1115,18 @@ If people need help with prompt engineering, which is how you converse effective
                                                 <div className="grid grid-cols-3 gap-1 content-start">
                                                     {items?.map((item, index) => (
                                                         <div key={item.id}
-                                                             className="m-3 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                                                             className="m-3 max-w-sm bg-white border border-gray-200  shadow dark:bg-gray-800 dark:border-gray-700">
                                                             <div className="">
 
                                                             </div>
                                                             <div className="relative max-w-sm">
                                                                 <div className="w-full h-full">
-                                                                    <img className="rounded-t-lg"
-                                                                         src="https://admissions.vanderbilt.edu/wp-content/uploads/sites/4/2021/06/20181108JR003-scaled.jpg"
+                                                                    <img className=""
+                                                                         src="https://www.utc.edu/sites/default/files/styles/utc_hero_large/public/2021-05/drone-shot-of-utc-campus.webp"
                                                                          alt=""/>
                                                                 </div>
                                                                 <div
-                                                                    className="m-3 absolute inset-x-0 bottom-0 left-0 h-12 w-12 p-1 rounded-full border-2">
+                                                                    className="m-3 absolute inset-x-0 bottom-0 left-0 h-12 w-12 p-1  border-2">
                                                                     {getMarketItemIcon(item)}
                                                                 </div>
                                                             </div>
@@ -1146,7 +1146,7 @@ If people need help with prompt engineering, which is how you converse effective
                                                                     By: {item.author}
                                                                 </p>
                                                                 <a href="#"
-                                                                   className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                                                   className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                                                                     <IconDownload/> Get
                                                                 </a>
                                                             </div>
@@ -1164,7 +1164,7 @@ If people need help with prompt engineering, which is how you converse effective
                                                         e.preventDefault();
                                                         setSearchCategory("*");
                                                     }}
-                                                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-7 py-2.5 me-2 mb-6 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium  text-sm px-7 py-2.5 me-2 mb-6 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                                                     See All Categories
                                                 </button>
                                             )}
@@ -1174,7 +1174,7 @@ If people need help with prompt engineering, which is how you converse effective
                                                         e.preventDefault();
                                                         setSearchCategory(category);
                                                     }}
-                                                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-7 py-2.5 me-2 mb-6 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium  text-sm px-7 py-2.5 me-2 mb-6 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                                                     See All in {category}
                                                 </button>
                                             )}

@@ -11,13 +11,13 @@ export interface ItemProps {
 //min-w-[${minWidth}px]
 export const KebabItem: FC<ItemProps> = ({label, handleAction, icon}) => {
   return (
-    <div className={`border-b dark:border-white/20`}>
+    <div className={`submenu-adjacent-button border dark:border-white/20`}>
       <button   
         key={label}
         value={label}
         onClick={handleAction}
-        className={`w-full items-center gap-1 flex flex-row pr-1 pl-1 cursor-pointer hover:bg-neutral-200 dark:hover:bg-[#051228]/90`}>
-        <div className="text-neutral-900 dark:text-neutral-100 flex-shrink-0">{icon} </div>
+        className={`w-full items-center gap-1 flex flex-row pr-1 pl-1 cursor-pointer hover:bg-neutral-200 dark:hover:bg-blue-500 dark:hover:text-yellow-500 py-2`}>
+        <div className="text-blue-500 dark:text-neutral-100 flex-shrink-0">{icon} </div>
          {label}
       </button>
     </div>);
@@ -65,8 +65,8 @@ export const KebabActionItem: FC<ActionProps> = ({label, type, handleAction, set
 
 
   return (
-    <div className="flex items-center gap-1 flex-row pr-1 pl-1 cursor-pointer border-b dark:border-white/20 hover:bg-neutral-200 dark:hover:bg-[#051228]/90">
-      <div className="text-neutral-900 dark:text-neutral-100">{icon}</div>
+    <div className="submenu-item-level-1 flex items-center gap-1 flex-row pr-1 pl-1 cursor-pointer border dark:border-white/20 hover:bg-blue-100 hover:text-blue-500 dark:hover:text-yellow-500 dark:hover:bg-blue-500 py-2">
+      <div className="submenu-icon text-blue-500 dark:text-yellow-500">{icon}</div>
       <button 
         key={label}
         value={label}
@@ -95,16 +95,16 @@ export const KebabMenuItems: FC<MenuItemsProps> = ({ label, xShift=220, minWidth
   
   return (
     <div
-    className={`pr-1 pl-1 border-b dark:border-white/20 cursor-pointer dark:border-white/20 hover:bg-neutral-200 dark:hover:bg-[#051228]/90 flex w-full items-center `}
+    className={`submenu-item-level-1 barlow-condensed folders pr-1 pl-1 border dark:border-white/20 cursor-pointer dark:border-white/20 hover:bg-neutral-200 dark:hover:bg-blue-500 dark:hover:text-yellow-500 flex w-full items-center py-2`}
       onMouseEnter={() => setIsSubMenuVisible(true)}
-      onMouseLeave={() => setIsSubMenuVisible(false)}
+      onMouseLeave={() => setIsSubMenuVisible(true)}
     >
       {`< ${label}`}
       {isSubMenuVisible && (
         <div 
-          className={`relative`} 
+          className={`submenu-level-2-wrapper relative -mt-4 dark:bg-blue-800`} 
           style={{ display: isSubMenuVisible ? 'block' : 'none', top: `-11px`}}>
-          <div className={`flex-grow absolute bg-neutral-100 dark:bg-[#112e51] text-neutral-900 border border-neutral-200 dark:border-neutral-600 dark:text-white z-50`}
+          <div className={`submenu-level-2 barlow-condensed flex-grow absolute hover:bg-neutral-100 dark:bg-blue-800 text-blue-500 border dark:border-white/20 dark:text-white z-50`}
             style={{ transform: `translateX(${xShiftPercentage})`, minWidth: `${minWidth}px`}}>    
             {childrenArray} 
           </div>

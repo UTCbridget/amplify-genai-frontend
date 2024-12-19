@@ -229,7 +229,7 @@ const Mermaid: React.FC<MermaidProps> = ({ chart, currentMessage }) => {
                 />
             </div>
             <div style={{ height: `${height + 20}px`, width: `${2 * height}px`, overflow: "auto" }}>
-                {messageIsStreaming && currentMessage ? <div><LoadingIcon /> Loading...</div> :
+                {messageIsStreaming && currentMessage ? <div><LoadingIcon className="text-yellow-500" /> Loading...</div> :
                     <img style={{ height: `${height}px` }}
                         src={svgDataUrl || "data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"80\"><text x=\"0\" y=\"30\" font-size=\"18\" font-family='sans-serif' font-weight=\"bold\" fill=\"white\">Loading...</text></svg>"}
                         alt="Loading" />

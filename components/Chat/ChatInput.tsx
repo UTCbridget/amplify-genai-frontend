@@ -531,7 +531,7 @@ const onAssistantChange = (assistant: Assistant) => {
 
     return (
         <div
-            className="absolute bottom-0 left-0 w-full border-transparent bg-gradient-to-b from-transparent via-white to-white pt-6 dark:border-white/20 dark:via-[#051228] dark:to-[#051228] md:pt-2">
+            className="absolute bottom-0 left-0 w-full border-transparent pt-6 dark:border-white/20 md:pt-2">
             <div
                 className="flex flex-col justify-center items-center stretch mx-2 mt-4 flex flex-row gap-3 last:mb-2 md:mx-4 md:mt-[52px] md:last:mb-6 lg:mx-auto lg:max-w-3xl">
                
@@ -567,7 +567,7 @@ const onAssistantChange = (assistant: Assistant) => {
                     {messageIsStreaming && (
                         <>
                             <button
-                                className="mb-3 flex w-fit items-center gap-3 border border-neutral-200 bg-white py-2 px-4 text-black hover:opacity-50 dark:border-neutral-600 dark:bg-[#051228] dark:text-white md:mb-0 md:mt-2"
+                                className="mb-3 flex w-fit items-center gap-3 border border-neutral-200 bg-white py-2 px-4 text-black hover:opacity-50 dark:border-neutral-600 dark:bg-transparent dark:text-white md:mb-0 md:mt-2"
                                 onClick={handleStopConversation}
                             >
                                 <IconPlayerStop size={16}/> {t('Stop Generating')}
@@ -583,7 +583,7 @@ const onAssistantChange = (assistant: Assistant) => {
                 {/*  selectedConversation &&*/}
                 {/*  selectedConversation.messages.length > 0 && (*/}
                 {/*    <button*/}
-                {/*      className="absolute top-0 left-0 right-0 mx-auto mb-3 flex w-fit items-center gap-3 border border-neutral-200 bg-white py-2 px-4 text-black hover:opacity-50 dark:border-neutral-600 dark:bg-[#051228] dark:text-white md:mb-0 md:mt-2"*/}
+                {/*      className="absolute top-0 left-0 right-0 mx-auto mb-3 flex w-fit items-center gap-3 border border-neutral-200 bg-white py-2 px-4 text-black hover:opacity-50 dark:border-neutral-600 dark:bg-transparent dark:text-white md:mb-0 md:mt-2"*/}
                 {/*      onClick={onRegenerate}*/}
                 {/*    >*/}
                 {/*      <IconRepeat size={16} /> {t('Regenerate response')}*/}
@@ -591,7 +591,7 @@ const onAssistantChange = (assistant: Assistant) => {
                 {/*  )}*/}
 
                 <div
-                    className="relative mx-2 flex w-full flex-grow flex-col border border-black/10 bg-white shadow-[0_0_10px_rgba(0,0,0,0.10)] dark:border-blue-900/50 dark:bg-[#112e51] dark:text-white dark:shadow-[0_0_15px_rgba(0,0,0,0.10)] sm:mx-4">
+                    className="relative mx-2 flex w-full flex-grow flex-col border border-black/10 bg-white shadow-[0_0_10px_rgba(0,0,0,0.10)] dark:border-blue-900/50 dark:bg-blue-800 dark:text-white dark:shadow-[0_0_15px_rgba(0,0,0,0.10)] sm:mx-4">
 
                     <div className="flex flex-row items-center">
                         <AssistantsInUse assistants={[selectedAssistant || DEFAULT_ASSISTANT]} assistantsChanged={(asts)=>{
@@ -620,7 +620,7 @@ const onAssistantChange = (assistant: Assistant) => {
                                 onKeyDown={(e) => {
                                 }}
                             >
-                                {plugin ? <IconBrandGoogle size={20}/> : <IconBolt size={20}/>}
+                                {plugin ? <IconBrandGoogle size={20} className="google-brand dark:hover:bg-blue-500 dark:hover:text-yellow-500"/> : <IconBolt size={20} className="bolt-icon dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>}
                             </button>
                         )}
 
@@ -636,7 +636,7 @@ const onAssistantChange = (assistant: Assistant) => {
                                 }}
                                 title="Files"
                             >
-                                <IconFiles size={20}/>
+                                <IconFiles size={20} className="google-brand dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>
                             </button>
                         )}
 
@@ -671,12 +671,12 @@ const onAssistantChange = (assistant: Assistant) => {
                                 title="Select Assistants"
 
                             >
-                                <IconAt size={20}/>
+                                <IconAt size={20} className="google-brand dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>
                             </button>
                         )}
 
                         {showAssistantSelect && (
-                            <div className="absolute left-0 bottom-14 bg-white dark:bg-[#051228]">
+                            <div className="absolute left-0 bottom-14 bg-white dark:bg-transparent">
                                 <AssistantSelect
                                     assistant={selectedAssistant || DEFAULT_ASSISTANT}
                                     availableAssistants={availableAssistants}
@@ -698,7 +698,7 @@ const onAssistantChange = (assistant: Assistant) => {
                         )}
 
                         {showPluginSelect && (
-                            <div className="absolute left-0 bottom-14 bg-white dark:bg-[#051228]">
+                            <div className="absolute left-0 bottom-14 bg-white dark:bg-transparent">
                                 <PluginSelect
                                     plugin={plugin}
                                     onKeyDown={(e: any) => {
@@ -721,7 +721,7 @@ const onAssistantChange = (assistant: Assistant) => {
                         )}
 
                         {showDataSourceSelector && (
-                            <div ref={dataSourceSelectorRef} className="absolute left-0 bottom-16 mb-6 bg-white dark:bg-[#051228]">
+                            <div ref={dataSourceSelectorRef} className="absolute left-0 bottom-16 mb-6 bg-white dark:bg-transparent">
                                 <DataSourceSelector
                                     onDataSourceSelected={(d) => {
 
@@ -798,13 +798,13 @@ const onAssistantChange = (assistant: Assistant) => {
                         />
 
                         <button
-                            className="right-2 top-2 p-1 text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200"
+                            className="right-2 top-2 p-1 text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-yellow-500"
                             onClick={handleSend}
                             title="Send Prompt"
                         >
                             {messageIsStreaming ? (
                                 <div
-                                    className="h-4 w-4 animate-spin rounded-full border-t-2 border-neutral-800 opacity-60 dark:border-neutral-100"></div>
+                                    className="h-4 w-4 animate-spin  border-t-2 border-neutral-800 opacity-60 dark:border-neutral-100"></div>
                             ) : (
                                 <IconSend size={18}/>
                             )}
@@ -813,7 +813,7 @@ const onAssistantChange = (assistant: Assistant) => {
                         {showScrollDownButton && (
                             <div className="absolute bottom-12 right-0 lg:bottom-0 lg:-right-10">
                                 <button
-                                    className="flex h-7 w-7 items-center justify-center rounded-full bg-neutral-300 text-blue-500 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-neutral-200"
+                                    className="flex h-7 w-7 items-center justify-center  bg-neutral-300 text-blue-500 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-blue-500 dark:text-neutral-200"
                                     onClick={onScrollDownClick}
                                     title="Scroll Down"
                                 >

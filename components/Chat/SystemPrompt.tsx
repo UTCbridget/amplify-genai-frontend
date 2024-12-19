@@ -205,7 +205,7 @@ export const SystemPrompt: FC<Props> = ({
       </label>
 
       <select
-          className="w-full rounded-lg border border-neutral-200 bg-transparent px-4 py-3 text-neutral-900 dark:border-neutral-600 dark:text-neutral-100"
+          className="w-full  border border-neutral-200 bg-transparent px-4 py-3 text-neutral-900 dark:border-neutral-600 dark:text-neutral-100"
         onChange={(e) => {
           setSelectedPromptId(e.target.value);
           if(e.target.value === "default") {
@@ -224,7 +224,7 @@ export const SystemPrompt: FC<Props> = ({
       </select>
       {/*<textarea*/}
       {/*  ref={textareaRef}*/}
-      {/*  className="w-full rounded-lg border border-neutral-200 bg-transparent px-4 py-3 text-neutral-900 dark:border-neutral-600 dark:text-neutral-100"*/}
+      {/*  className="w-full  border border-neutral-200 bg-transparent px-4 py-3 text-neutral-900 dark:border-neutral-600 dark:text-neutral-100"*/}
       {/*  style={{*/}
       {/*    resize: 'none',*/}
       {/*    bottom: `${textareaRef?.current?.scrollHeight}px`,*/}

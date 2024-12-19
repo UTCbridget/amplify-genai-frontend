@@ -143,7 +143,7 @@ const QiModal: React.FC<QiModalProps> = ({qiSummary, onSubmit, onCancel, type, c
     return ( <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
               <div className="fixed inset-0 z-10 overflow-hidden">
                 <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-                    <div className="dark:border-netural-400 inline-block overflow-hidden rounded-lg border border-gray-300 bg-white px-4 pt-5 text-left align-bottom shadow-xl transition-all dark:bg-[#112e51] sm:my-8 sm:w-full sm:max-w-[770px] sm:align-middle">
+                    <div className="dark:border-netural-400 inline-block overflow-hidden  border border-gray-300 bg-white px-4 pt-5 text-left align-bottom shadow-xl transition-all dark:bg-[#112e51] sm:my-8 sm:w-full sm:max-w-[770px] sm:align-middle">
 
                         {isSubmitting && (
                             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25">
@@ -167,7 +167,7 @@ const QiModal: React.FC<QiModalProps> = ({qiSummary, onSubmit, onCancel, type, c
                                 {t(`${type} Summary`)}
                             </div>
                             <textarea
-                                className="mt-2 w-full rounded-lg border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
                                 style={{resize: 'none'}}
                                 placeholder={`A summary of the overall ${nameType}.`}
                                 value={summary}
@@ -176,10 +176,10 @@ const QiModal: React.FC<QiModalProps> = ({qiSummary, onSubmit, onCancel, type, c
                             />
 
                         <div className="mt-6 text-sm font-bold text-black dark:text-neutral-200">
-                                {t('Amplify Use Case ')}
+                                {t('ChattUTC Use Case ')}
                             </div>
                             <textarea
-                                className="mt-2 w-full rounded-lg border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
                                 style={{resize: 'none'}}
                                 placeholder={`Write the purpose or use case of your ${nameType}.`}
                                 value={purpose}
@@ -192,7 +192,7 @@ const QiModal: React.FC<QiModalProps> = ({qiSummary, onSubmit, onCancel, type, c
                                 {t('Additional Comments')}
                             </div>
                             <textarea
-                                className="mt-2 w-full rounded-lg border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
                                 style={{resize: 'none'}}
                                 placeholder={`Provide any additional feedback or comments regarding this ${nameType} for quality improvement.`}
                                 value={additionalComments}
@@ -220,11 +220,11 @@ const QiModal: React.FC<QiModalProps> = ({qiSummary, onSubmit, onCancel, type, c
 
 
                         <div className="flex flex-row items-center justify-end p-4 bg-white dark:bg-[#112e51]">
-                            <button className="mr-2 w-full px-4 py-2 border rounded-lg shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300" 
+                            <button className="mr-2 w-full px-4 py-2 border  shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300" 
                                 onClick={onCancel}
                                 >Cancel
                             </button>
-                            <button className="w-full px-4 py-2 border rounded-lg shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300" 
+                            <button className="w-full px-4 py-2 border  shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300" 
                                 onClick={handleSubmit}
                                 >Submit
                             </button>

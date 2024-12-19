@@ -708,7 +708,7 @@ export const Chat = memo(({stopConversationRef}: Props) => {
 
 // @ts-ignore
         return (
-            <div className="relative flex-1 overflow-hidden bg-white dark:bg-[#051228] bg-[url('/chattutc-light-bg.jpg')] dark:bg-[url('/chattutc-dark-bg.jpg')] bg-cover">
+            <div className="relative flex-1 overflow-hidden">
                 { modelError ? (
                     <ErrorMessageDiv error={modelError}/>
                 ) : (
@@ -735,7 +735,7 @@ export const Chat = memo(({stopConversationRef}: Props) => {
 
                                         {models.length > 0 && (
                                             <div
-                                                className="flex h-full flex-col space-y-4 rounded-lg border border-neutral-200 p-4 dark:border-neutral-600">
+                                                className="flex h-full flex-col space-y-4  border border-neutral-200 p-4 dark:border-neutral-600">
                                                 
                                                 <div className="relative flex flex-row w-full items-center"> 
                                                     <div className="flex-grow">
@@ -843,7 +843,7 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                             }}/>
                                     )}
                                     <div
-                                        className="items-center sticky top-0 z-10 flex justify-center border border-b-neutral-300 bg-neutral-100 py-2 text-sm text-neutral-500 dark:border-none dark:bg-[#444654] dark:text-neutral-200">
+                                        className="workspace-wrapper items-center sticky top-0 z-10 flex justify-center border border-b-neutral-300 bg-neutral-100 py-2 text-sm text-neutral-500 dark:border-none dark:bg-blue-500 dark:text-neutral-200">
 
                                         {t('Workspace: ' + workspaceMetadata.name)} | {selectedConversation?.model.name} | {t('Temp')}
                                         : {selectedConversation?.temperature} |
@@ -907,7 +907,7 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                             title="Files"
                                         >
                                             <div className="flex flex-row items-center ml-2
-                                            bg-[#9de6ff] dark:bg-[#8edffa] rounded-lg text-gray-600 p-1">
+                                            bg-[#9de6ff] dark:bg-[#8edffa]  text-gray-600 p-1">
                                                 <div><IconRocket size={18}/></div>
                                                 <div className="ml-1">Files </div>
                                             </div>
@@ -918,7 +918,7 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                         <div
                                             className="flex flex-col space-y-10 md:mx-auto md:max-w-xl md:gap-6 md:py-3 md:pt-6 lg:max-w-2xl lg:px-0 xl:max-w-3xl">
                                             <div
-                                                className="flex h-full flex-col space-y-4 border-b border-neutral-200 p-4 dark:border-neutral-600 md:rounded-lg md:border">
+                                                className="flex h-full flex-col space-y-4 border-b border-neutral-200 p-4 dark:border-neutral-600 md: md:border">
                                                 <ModelSelect/>
                                             </div>
                                         </div>
@@ -928,7 +928,7 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                         className="flex flex-col space-y-10 md:mx-auto md:max-w-xl md:gap-6 md:py-3 md:pt-6 lg:max-w-2xl lg:px-0 xl:max-w-3xl">
 
                                         <div
-                                            className="flex h-full flex-col space-y-4 border-b border-neutral-200 p-2 dark:border-neutral-600 md:rounded-lg md:border">
+                                            className="flex h-full flex-col space-y-4 border-b border-neutral-200 p-2 dark:border-neutral-600 md: md:border">
 
                                             <TagsList tags={selectedConversation?.tags || []} setTags={
                                                 (tags) => {
@@ -1003,7 +1003,7 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                     {loading && <ChatLoader/>}
 
                                     <div
-                                        className="h-[162px] bg-white dark:bg-[#051228]"
+                                        className="h-[162px] bg-white dark:bg-transparent"
                                         ref={messagesEndRef}
                                     />
 
