@@ -151,7 +151,7 @@ const WorkspaceList: FC<SharedItemsListProps> = () => {
             <div className="flex flex-row w-full items-center p-3">
                 <div className="w-full flex items-center">
                     <button
-                        className="text-sidebar flex w-full flex-shrink-0 cursor-pointer select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-blue-500"
+                        className="text-sidebar flex w-full flex-shrink-0 cursor-pointer select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-blue-500 dark:hover:text-yellow-500"
                         onClick={() => {
                             setIsModalOpen(true);
                         }}
@@ -162,7 +162,7 @@ const WorkspaceList: FC<SharedItemsListProps> = () => {
                 </div>
                 <div className="w-full flex items-center pl-2">
                     <button
-                        className="text-sidebar flex w-full flex-shrink-0 cursor-pointer select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-blue-500"
+                        className="text-sidebar flex w-full flex-shrink-0 cursor-pointer select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-blue-500 dark:hover:text-yellow-500"
                         onClick={() => {
 
                             let proceed = true;

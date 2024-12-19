@@ -208,7 +208,7 @@ export const ChatMessage: FC<Props> = memo(({
         <div
             className={`assistant-wrapper group md:px-4 ${message.role === 'assistant'
                 ? 'border-b border-black/10 bg-gray-50 text-blue-500 dark:border-yellow-500 dark:bg-blue-300/10 dark:text-white'
-                : 'border-b border-black/10 bg-white text-blue-500 dark:border-white dark:bg-blue-300/10 dark:text-white'
+                : 'border-b border-black/10 bg-white text-blue-500 dark:border-white/10 dark:bg-blue-300/10 dark:text-white'
             }`}
             style={{overflowWrap: 'anywhere'}}
         >
@@ -281,10 +281,10 @@ export const ChatMessage: FC<Props> = memo(({
                                                  assistantRecipient.definition &&
                                                  assistantRecipient.definition.name &&
                                                  assistantRecipient.definition.assistantId ?
-                                                    <span className="bg-blue-500 dark:bg-yellow-500  pr-1 pl-1 mr-3">
+                                                    <span className="bg-blue-500 dark:bg-yellow-500  pr-1 pl-1 mr-3 hidden">
                                                     </span>
                                                     :
-                                                    <span className="bg-blue-500 dark:bg-yellow-500  pr-1 pl-1 mr-3">
+                                                    <span className="bg-blue-500 dark:bg-yellow-500  pr-1 pl-1 mr-3 hidden">
                                                     </span>
                                                 } {message.label || message.content}
                                             </div>

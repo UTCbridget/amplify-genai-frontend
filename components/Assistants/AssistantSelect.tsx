@@ -82,7 +82,7 @@ export const AssistantSelect: FC<Props> = ({
                 >
                     <option
                         key="amplify"
-                        value="amplify"
+                        value="ChattUTC"
                         className="dark:bg-transparent dark:text-white"
                     >
                         Standard Conversation

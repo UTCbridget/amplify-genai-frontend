@@ -154,8 +154,8 @@ pre:has(div.codeblock) {
   background: rgba(17,23,42,.6);
 }***/
 
-.assistant-wrapper, .workspace-wrapper {
+.assistant-wrapper {
   /*background: rgba(5,18,40,.5)!important;*/
-  bacground: rgba(255,255,255,.1)!important
+  background: rgba(255,255,255,.1)!important
 }
 .power-c-chatt-icon {margin-top:.15rem;}
