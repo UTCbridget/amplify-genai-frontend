@@ -9,13 +9,20 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      width: {
+        '125': '125%',
+      },
+      transformOrigin: {
+        "utcprofile": "transform: scale(.75) translate(50%, 50%);"
+      },
       fontFamily: {
         "sans": ["Raleway, sans-serif"],
         "serif": ["Baskervville, Times New Roman, serif"],
         "mono": ["Source Code Pro, Courier New, monospace"],
         "utcbody": ["Raleway, sans-serif"],
         "utcheadings": ["Oswald, sans-serif"],
-        "utcquote": ["Georgia, serif"]
+        "utcquote": ["Georgia, serif"],
+        "condensed": ["Barlow Condensed, sans-serif!important"],
       },
       fontWeight: {
         thin: '100',

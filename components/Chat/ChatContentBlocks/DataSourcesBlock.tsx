@@ -31,11 +31,11 @@ export const DataSourcesBlock: React.FC<Props> = (
             {message.data && message.data.dataSources && message.data.dataSources.map((d: any, i: any) => (
                 <div
                     key={i}
-                    className="bg-yellow-400 dark:bg-[#B0BEC5] rounded-xl shadow-lg h-12 mr-2 mb-2"
+                    className="bg-yellow-400 dark:bg-[#B0BEC5]  shadow-lg h-12 mr-2 mb-2"
                 >
                     <div className="flex flex-row">
                         <div
-                            className="w-14 h-12 flex-none bg-cover rounded-l-xl text-center overflow-hidden"
+                            className="w-14 h-12 flex-none bg-cover  text-center overflow-hidden"
                             style={{backgroundImage: 'url("/sparc_apple.png")'}}
                             title={d.name}>
                         </div>

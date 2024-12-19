@@ -40,12 +40,12 @@ export const DataSourceSelector: FC<Props> = ({
     }
 
     const pageClasses = (page: string) => {
-        return `inline-flex items-center px-4 py-3 rounded-lg hover:text-gray-900 hover:bg-gray-100 w-full dark:hover:bg-gray-700 dark:hover:text-white
+        return `inline-flex items-center px-4 py-3  hover:text-gray-900 hover:bg-gray-100 w-full dark:hover:bg-gray-700 dark:hover:text-white
                         ${selectedPage === page ? "text-white bg-blue-700 dark:bg-blue-600" : "bg-50 dark:bg-gray-800"}`;
     }
 
     return (
-        <div className="md:flex rounded-t-xl border dark:border-[#454652] bg-[#e5e7eb] dark:bg-[#051228]">
+        <div className="md:flex  border dark:border-[#454652] bg-[#e5e7eb] dark:bg-transparent">
             <ul className="p-1 flex-column space-y space-y-4 text-sm font-medium text-gray-500 dark:text-gray-400 md:me-4 mb-4 md:mb-0">
                 <li>
                     <a href="#"
@@ -118,7 +118,7 @@ export const DataSourceSelector: FC<Props> = ({
             </ul>
 
             <div
-                className="p-0 bg-[#ffffff] text-medium text-gray-500 dark:text-gray-400 dark:bg-[#051228] rounded-lg w-full"
+                className="p-0 bg-[#ffffff] text-medium text-gray-500 dark:text-gray-400 dark:bg-transparent  w-full"
                 style={{minHeight: minHeight, minWidth: minWidth}}
             >
                 {selectedPage === "files" && (

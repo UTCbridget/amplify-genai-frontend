@@ -1,4 +1,4 @@
-# Amplify
+# Amplify (ChattUTC)
 
 # Prompting Language Documentation
 

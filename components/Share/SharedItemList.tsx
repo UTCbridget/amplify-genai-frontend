@@ -218,7 +218,7 @@ const SharedItemsList: FC<SharedItemsListProps> = () => {
             <div className="flex flex-row items-center pt-3 pl-3 pr-3">
                 <div className="flex w-full items-center">
                     <button
-                        className="text-sidebar flex w-full flex-shrink-0 cursor-pointer select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-gray-500/10"
+                        className="text-sidebar flex w-full flex-shrink-0 cursor-pointer select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-blue-500"
                         onClick={() => {
                             statsService.openMarketEvent();
                             homeDispatch({field: 'page', value: 'market'})
@@ -234,18 +234,18 @@ const SharedItemsList: FC<SharedItemsListProps> = () => {
             <div className="flex flex-row items-center pt-3 pl-2 pr-3">
                 <div className="mb-4 flex items-center space-x-2">
                     <button
-                        className="text-sidebar flex flex-grow flex-shrink flex-shrink-0 cursor-pointer select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-gray-500/10"
+                        className="text-sidebar flex flex-grow flex-shrink flex-shrink-0 cursor-pointer select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-blue-500 dark:hover:text-yellow-500"
                         onClick={() => {
                             setIsModalOpen(true);
                         }}
                     >
-                        <IconShare size={16}/>
+                        <IconShare size={16} />
                         Share with Other Users
                     </button>
                     <button
                         title='Refresh'
                         disabled={isLoading}
-                        className={`text-sidebar flex flex-grow flex-shrink-0 select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 ${!isLoading ? "cursor-pointer hover:bg-neutral-200 dark:hover:bg-gray-500/10" : ""}`}
+                        className={`text-sidebar flex flex-grow flex-shrink-0 select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 ${!isLoading ? "cursor-pointer hover:bg-neutral-200 dark:hover:bg-blue-500" : ""}`}
                         onClick={async () => {
                         if (user?.email) {
                            setIsLoading(true);
@@ -262,7 +262,7 @@ const SharedItemsList: FC<SharedItemsListProps> = () => {
                 {featureFlags.enableMarket && (
                 <div className="flex items-center pl-2">
                     <button
-                        className="text-sidebar flex w-full flex-shrink-0 cursor-pointer select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-gray-500/10"
+                        className="text-sidebar flex w-full flex-shrink-0 cursor-pointer select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-blue-500"
                         onClick={() => {
                             setIsMarketModalOpen(true);
                         }}
@@ -275,20 +275,20 @@ const SharedItemsList: FC<SharedItemsListProps> = () => {
 
             </div>
 
-            <div className="flex flex-row gap-1 bg-neutral-100 dark:bg-[#112e51] rounded-t border-b dark:border-white/20">
+            <div className="flex flex-row gap-1 bg-neutral-100 dark:bg-[#112e51]  border-b dark:border-white/20">
                         <button
                             key={"sharedWithYou"}
                             disabled={isLoading}
                             onClick={() => setActiveTab("SWY")}
-                            className={`p-2 rounded-t flex flex-shrink-0 ${activeTab === "SWY" ? 'border-l border-t border-r dark:border-gray-500 dark:text-white' : 'text-gray-400 dark:text-gray-600'}`}>
-                            <h3 className="text-lg">Shared With You</h3> 
+                            className={`p-2  flex flex-shrink-0 ${activeTab === "SWY" ? 'border-l border-t border-r dark:border-gray-500 dark:text-yellow-500 w-6/12' : 'text-gray-400 dark:text-gray-400 w-6/12'}`}>
+                            <h3 className="text-lg mx-auto">Shared With You</h3> 
                         </button>
                         <button
                             key={"youShared"}
                             disabled={isLoading}
                             onClick={() => setActiveTab("YS")}
-                            className={`p-2 rounded-t flex flex-shrink-0 ${activeTab === "YS" ? 'border-l border-t border-r dark:border-gray-500 dark:text-white' : 'text-gray-400 dark:text-gray-600'}`}>
-                            <h3 className="text-lg">You Shared</h3> 
+                            className={`p-2  flex flex-shrink-0 ${activeTab === "YS" ? 'border-l border-t border-r dark:border-gray-500 dark:text-yellow-500 w-6/12' : 'text-gray-400 dark:text-gray-400 w-6/12'}`}>
+                            <h3 className="text-lg mx-auto">You Shared</h3> 
                         </button>
             </div>
            
@@ -316,7 +316,7 @@ const SharedItemsList: FC<SharedItemsListProps> = () => {
                             }
                             }
                                 key={index}
-                                className={`flex cursor-pointer items-center gap-2 rounded-lg pb-2 pt-3 pr-2 text-sm transition-colors duration-200 ${isButtonHover ? "hover:bg-neutral-200 dark:hover:bg-[#051228]/90": ""}`}
+                                className={`flex cursor-pointer items-center gap-2  pb-2 pt-3 pr-2 text-sm transition-colors duration-200 ${isButtonHover ? "hover:bg-neutral-200 dark:hover:bg-blue-500": ""}`}
                                 onClick={() => {
                                     setSharedBy(item.sharedBy);
                                     handleFetchShare(item);
@@ -333,7 +333,7 @@ const SharedItemsList: FC<SharedItemsListProps> = () => {
                                     </div>
                                 </div>
                                 {hoveredItem === item && ( 
-                                    <div className="ml-auto relative right-0 flex-shrink-0 flex flex-row items-center space-y-0 bg-neutral-200 dark:bg-[#051228]/90 rounded"
+                                    <div className="ml-auto relative right-0 flex-shrink-0 flex flex-row items-center space-y-0 bg-neutral-200 dark:bg-transparent"
                                     onMouseEnter={() => {
                                         setHoveredItem(item)
                                         setIsButtonHover(false)
@@ -390,7 +390,7 @@ const SharedItemsList: FC<SharedItemsListProps> = () => {
                                     
             //                         {item.objects.map((object: any) => {
             //                             return (<label
-            //                             className="ml-4 flex w-full items-center gap-3 rounded-lg p-2 text-sm">
+            //                             className="ml-4 flex w-full items-center gap-3  p-2 text-sm">
             //                             {object.type === 'prompt' && isAssistantById(object.id, promptsRef.current) ? <IconRobot size={20} /> : <IconMessage size={18} />}
             //                                 <div
             //                                     className="relative max-h-5 flex-1 overflow-hidden text-ellipsis whitespace-nowrap break-all text-left text-[12.5px] leading-3">
@@ -408,7 +408,7 @@ const SharedItemsList: FC<SharedItemsListProps> = () => {
             //                     //     closedWidget={<IconCaretRight size={18}/>}
             //                     //     content={item.objects.map((object: any) => {
             //                     //         return (<label
-            //                     //         className="ml-2 flex w-full items-center gap-3 rounded-lg p-2 text-sm">
+            //                     //         className="ml-2 flex w-full items-center gap-3  p-2 text-sm">
             //                     //         {object.type === 'prompt' && isAssistantById(object.id) ? <IconRobot size={20} /> : <IconMessage size={18} />}
             //                     //             <div
             //                     //                 className="relative max-h-5 flex-1 overflow-hidden text-ellipsis whitespace-nowrap break-all text-left text-[12.5px] leading-3">
@@ -436,7 +436,7 @@ const SharedItemsList: FC<SharedItemsListProps> = () => {
             //                             }
             //                             }
             //                             key={index}
-            //                             className="ml-6 flex flex-row w-full cursor-pointer items-center gap-3 rounded-lg pb-2 pt-3 pr-2 text-sm"
+            //                             className="ml-6 flex flex-row w-full cursor-pointer items-center gap-3  pb-2 pt-3 pr-2 text-sm"
             //                         >
             //                             <IconUser size={18} className="flex-shrink-0"/>
             //                             <div
@@ -445,7 +445,7 @@ const SharedItemsList: FC<SharedItemsListProps> = () => {
             //                                 {user_item.user.includes('@')? user_item.user.split("@")[0] : user_item.user}
             //                             </div>
             //                             {hoveredItem === user_item && ( 
-            //                                 <div className="ml-auto mr-4 right-0 flex-shrink-0 flex flex-row items-center space-y-0 bg-neutral-200 dark:bg-[#051228]/90 rounded"
+            //                                 <div className="ml-auto mr-4 right-0 flex-shrink-0 flex flex-row items-center space-y-0 bg-neutral-200 dark:bg-transparent"
             //                                 onMouseEnter={() => {
             //                                     setHoveredItem(user_item)
             //                                     setIsButtonHover(false)
@@ -491,9 +491,9 @@ export default SharedItemsList;
 
 
 
-// {hoveredItem === item && ( <div className="absolute right-1 z-10 flex bg-neutral-200 dark:bg-[#051228]/90 rounded">
+// {hoveredItem === item && ( <div className="absolute right-1 z-10 flex bg-neutral-200 dark:bg-transparent">
                         
-//                                             <div className="ml-auto mr-4 absolute right-0 flex-shrink-0 flex flex-row items-center space-y-0 bg-neutral-200 dark:bg-[#051228]/90 rounded"
+//                                             <div className="ml-auto mr-4 absolute right-0 flex-shrink-0 flex flex-row items-center space-y-0 bg-neutral-200 dark:bg-transparent"
 //                                             onMouseEnter={() => {
 //                                                 setHoveredItem(item)
 //                                                 setIsButtonHover(false)

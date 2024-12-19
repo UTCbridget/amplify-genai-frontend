@@ -1,6 +1,6 @@
 import { FC, useContext, useEffect, useRef, useState } from "react";
 import {
-    IconTrash, IconDotsVertical,
+    IconTrash, IconMenu2,
     IconX, IconShare, IconTags,
     IconCheck, IconFolderOpen, 
     IconFolder, IconCalendar, IconAbc
@@ -259,14 +259,14 @@ interface Props {
 
     return (
         <div>
-        <div className="flex items-center" style={{pointerEvents: isMenuOpen ? 'none' : 'auto'}}>
+        <div className="sidebar-button-with-menu flex items-center" style={{pointerEvents: isMenuOpen ? 'none' : 'auto'}}>
           <div className="pb-1 flex w-full text-lg ml-1 text-black dark:text-neutral-200 flex items-center">
             {label} 
           </div>
             {actionItem && checkIsActiveSide() && (
                 <div className="text-xs flex flex-row gap-1">
                     {`${actionItem.actionLabel}...`} 
-                    <div className="flex flex-row gap-0.5 bg-neutral-200 dark:bg-[#051228]/90 rounded">
+                    <div className="flex flex-row gap-0.5 bg-neutral-200 ">
                          <button 
                                 className="text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100" 
                                 onClick={(e) => {
@@ -297,7 +297,7 @@ interface Props {
                 </div>
             )}
 
-          <div className="relative inline-block text-left">
+          <div className="relative inline-block text-left has-menu-icon">
             { actionItem && checkIsActiveSide() ?
                 <div className={`z-10 p-0.5 ${ checkingItemType?.includes("Folder")? "": ""}`}>
                     <input
@@ -307,42 +307,43 @@ interface Props {
                     />
                 </div> :
                 <button
-                    className={`outline-none focus:outline-none p-0.5 ${isMenuOpen ? 'bg-neutral-200 dark:bg-[#051228]/90' : ''}`}
+                    className={`outline-none focus:outline-none p-0.5 ${isMenuOpen ? 'bg-transparent' : ''}`}
                     onClick={toggleDropdown}>
-                    <IconDotsVertical size={30} className="flex-shrink-0 text-neutral-500 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-yellow-500"/>
+                    <IconMenu2 size={30} className="menu-icon flex-shrink-0 text-yellow-500"/>
                 </button>
             }
             
             {isMenuOpen && (
                 <div
-                    ref={menuRef}
-                    className="ml-[-200%] absolute bg-neutral-100 dark:bg-[#112e51] text-neutral-900 border border-neutral-200 dark:border-neutral-600 dark:text-white z-50"
-                    style={{ top: '90%', pointerEvents: 'auto' }}>
-                    <div>
-                        <KebabActionItem label="Delete" type={label as CheckItemType} handleAction={()=>{isConvSide ? handleDeleteConversations() : handleDeletePrompts()}} 
-                                         setIsMenuOpen={setIsMenuOpen} setActiveItem={setActionItem} dropFolders={openCloseFolders} icon={<IconTrash size={14} />} />
-                        <KebabActionItem label="Share" type={label as CheckItemType} handleAction={()=>{setIsShareDialogVisible(true)}} setIsMenuOpen={setIsMenuOpen} 
-                                         setActiveItem={setActionItem} dropFolders={openCloseFolders} icon={<IconShare size={14} />} />
-                        {isConvSide  && <KebabActionItem label="Tag" type={label as CheckItemType} handleAction={()=>{setIsTagsDialogVisible(true)}} 
-                                         setIsMenuOpen={setIsMenuOpen} setActiveItem={setActionItem} dropFolders={openCloseFolders} icon={<IconTags size={14} />} />}
-                        
-                        <KebabMenuItems label="Folders" xShift={176} minWidth={86}>
+                ref={menuRef}
+                className="conversation-submenu ml-[-200%] absolute bg-neutral-100 text-blue-500 dark:bg-blue-800 dark:text-white z-50 w-[100px] font-condensed"
+                style={{ top: '90%', pointerEvents: 'auto' }}>
+                <div>
+                    <KebabActionItem label="Delete" type={label as CheckItemType} handleAction={()=>{isConvSide ? handleDeleteConversations() : handleDeletePrompts()}} 
+                                     setIsMenuOpen={setIsMenuOpen} setActiveItem={setActionItem} dropFolders={openCloseFolders} icon={<IconTrash size={14} className="hidden" />} />
+                    <KebabActionItem label="Share" type={label as CheckItemType} handleAction={()=>{setIsShareDialogVisible(true)}} setIsMenuOpen={setIsMenuOpen} 
+                                     setActiveItem={setActionItem} dropFolders={openCloseFolders} icon={<IconShare size={14} className="hidden" />} />
+                    {isConvSide  && <KebabActionItem label="Tag" type={label as CheckItemType} handleAction={()=>{setIsTagsDialogVisible(true)}} 
+                                     setIsMenuOpen={setIsMenuOpen} setActiveItem={setActionItem} dropFolders={openCloseFolders} icon={<IconTags size={14} className="hidden" />} />}
+                    
+                    <KebabMenuItems label="Folders" xShift={173} minWidth={86}>
 
-                            <KebabMenuItems label="Sort" xShift={162}>
-                                <KebabItem label="Name" handleAction={() => {setFolderSort('name')}} icon={<IconAbc size={18}/>} />
-                                <KebabItem label="Date" handleAction={() => { setFolderSort('date') } } icon={<IconCalendar size={14}/>} />
-                            </KebabMenuItems>
-
-                            <KebabActionItem label="Share" type={`${isConvSide?'Chat':'Prompt'}Folders`} handleAction={()=>{setIsShareDialogVisible(true)}} 
-                                             setIsMenuOpen={setIsMenuOpen} setActiveItem={setActionItem} dropFolders={openCloseFolders} icon={<IconShare size={14} />} />
-                            <KebabActionItem label="Delete" type={`${isConvSide?'Chat':'Prompt'}Folders`} handleAction={() => { handleDeleteFolders() }} 
-                                             setIsMenuOpen={setIsMenuOpen} setActiveItem={setActionItem} dropFolders={openCloseFolders} icon={<IconTrash size={14} />} />
-                            <KebabItem label="Open All" handleAction={() => { openCloseFolders(true) } } icon={<IconFolderOpen size={13} />}  />
-                            <KebabItem label="Close All" handleAction={() => { openCloseFolders(false) }} icon={<IconFolder size={14}/>}  />
-                            
+                        <KebabMenuItems label="Sort" xShift={158}>
+                            <KebabItem label="Name" handleAction={() => {setFolderSort('name')}} icon={<IconAbc size={18} className="hidden"/> } />
+                            <KebabItem label="Date" handleAction={() => { setFolderSort('date') } } icon={<IconCalendar size={14} className="hidden"/>} />
                         </KebabMenuItems>
-                    </div>
+
+                        <KebabActionItem label="Share" type={`${isConvSide?'Chat':'Prompt'}Folders`} handleAction={()=>{setIsShareDialogVisible(true)}} 
+                                         setIsMenuOpen={setIsMenuOpen} setActiveItem={setActionItem} dropFolders={openCloseFolders} icon={<IconShare size={14} className="hidden" />} />
+                        <KebabActionItem label="Delete" type={`${isConvSide?'Chat':'Prompt'}Folders`} handleAction={() => { handleDeleteFolders() }} 
+                                         setIsMenuOpen={setIsMenuOpen} setActiveItem={setActionItem} dropFolders={openCloseFolders} icon={<IconTrash size={14} className="hidden" />} />
+                        <KebabItem label="Open All" handleAction={() => { openCloseFolders(true) } } icon={<IconFolderOpen size={13} className="hidden" />}  />
+                        <KebabItem label="Close All" handleAction={() => { openCloseFolders(false) }} icon={<IconFolder size={14} className="hidden"/>} />
+                        
+                    </KebabMenuItems>
                 </div>
+                
+            </div>
             )}
           </div>
           
@@ -373,7 +374,7 @@ interface Props {
         {isTagsDialogVisible && 
         <div className="fixed inset-0 bg-black bg-opacity-50 h-full w-full">
             <div className="flex items-center justify-center min-h-screen">
-              <div className="border border-neutral-300 dark:border-netural-400 bg-white dark:bg-[#112e51] rounded-lg md:rounded-lg shadow-lg overflow-hidden mx-auto max-w-lg w-[400px]"
+              <div className="border border-neutral-300 dark:border-netural-400 bg-white dark:bg-[#112e51]  md: shadow-lg overflow-hidden mx-auto max-w-lg w-[400px]"
               >
                 <div className="p-2 h-[60px] overflow-y-auto">
                 <TagsList tags={tags} 
@@ -410,7 +411,7 @@ interface Props {
                 <div className="p-2">
                   <button
                         type="button"
-                        className="w-full mb-1 px-4 py-2 border rounded-lg shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300"
+                        className="w-full mb-1 px-4 py-2 border  shadow border-neutral-500 text-blue-500 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark: dark:text-blue-500 dark:hover:bg-blue-500 dark:hover:text-yellow-500"
                         onClick={() => {setIsTagsDialogVisible(false);
                                         clear();
                                         if (tags.length > 0)  {

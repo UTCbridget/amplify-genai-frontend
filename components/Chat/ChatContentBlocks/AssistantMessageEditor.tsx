@@ -61,7 +61,7 @@ const AssistantMessageEditor: React.FC<Props> = (
     return (<div className="flex w-full flex-col">
                                     <textarea
                                         ref={textareaRef}
-                                        className="w-full resize-none whitespace-pre-wrap border-none dark:bg-[#051228]"
+                                        className="w-full resize-none whitespace-pre-wrap border-none dark:bg-transparent"
                                         value={messageContent}
                                         onChange={handleInputChange}
                                         onKeyDown={handlePressEnter}

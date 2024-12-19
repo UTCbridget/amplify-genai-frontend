@@ -140,16 +140,16 @@ export const ConversationComponent = ({ conversation}: Props) => {
   }
 
   return (
-    <div className="relative flex items-center">
+    <div className="conversation-region-1 relative flex items-center">
       {isRenaming && selectedConversation?.id === conversation.id ? (
-        <div className="flex w-full items-center gap-3 rounded-lg bg-neutral-200 dark:bg-[#051228]/90 p-3">
-          {isLocalConversation(conversation) ? <IconMessage size={18} /> 
+        <div className="flex w-full items-center gap-3  bg-neutral-200 dark:bg-transparent p-3">
+          {isLocalConversation(conversation) ? <IconMessage size={18} className="bg-transparent dark:hover:bg-blue-500 dark:hover:text-yellow-500"/> 
                                              :  <div>
                                                   <IconCloud className="block dark:hidden" size={18} />
                                                   <IconCloudFilled className="hidden dark:block dark:text-neutral-200" size={18} />
                                                 </div>}
           <input
-            className="mr-12 flex-1 overflow-hidden overflow-ellipsis border-neutral-400 bg-transparent text-left text-[12.5px] leading-3 dark:text-white outline-none focus:border-neutral-100"
+            className="conversation-input mr-12 flex-1 overflow-hidden overflow-ellipsis border-neutral-400 bg-transparent text-left text-[12.5px] leading-3 dark:text-white outline-none focus:border-neutral-100"
             type="text"
             value={renameValue}
             onChange={(e) => setRenameValue(e.target.value)}
@@ -159,11 +159,11 @@ export const ConversationComponent = ({ conversation}: Props) => {
         </div>
       ) : (
         <button
-          className={`flex w-full cursor-pointer items-center gap-3 rounded-lg p-3 text-sm transition-colors duration-200 hover:bg-neutral-200 dark:hover:bg-[#051228]/90 ${
+          className={`conversation-button-1 flex w-full cursor-pointer items-center gap-3  p-3 text-sm transition-colors duration-200 hover:bg-neutral-200 dark:text-neutral-400 bg-transparent dark:hover:bg-blue-500 dark:hover:text-yellow-500 ${
             messageIsStreaming ? 'disabled:cursor-not-allowed' : ''
           } ${
             selectedConversation?.id === conversation.id
-              ? 'bg-neutral-200 dark:bg-[#051228]/90'
+              ? 'bg-neutral-200 dark:bg-transparent'
               : ''
           }`}
           onClick={() => handleSelectConversation(conversation)}
@@ -172,14 +172,14 @@ export const ConversationComponent = ({ conversation}: Props) => {
           onDragStart={(e) => handleDragStart(e, conversation)}
           title="View Conversation"
         >
-         {isLocalConversation(conversation) ? <IconMessage size={18} /> 
+         {isLocalConversation(conversation) ? <IconMessage size={18} className="bg-transparent dark:hover:bg-blue-500 dark:hover:text-yellow-500" /> 
                                             : <div>
-                                                <IconCloud className="block dark:hidden" size={18} />
-                                                <IconCloudFilled className="hidden dark:block dark:text-neutral-200" size={18} />
+                                                <IconCloud className="block dark:hidden bg-transparent dark:hover:bg-blue-500 dark:hover:text-yellow-500" size={18} />
+                                                <IconCloudFilled className="hidden dark:block dark:text-neutral-200 bg-transparent dark:hover:bg-blue-500 dark:hover:text-yellow-500" size={18} />
                                               </div>}
          
           <div
-            className={`relative max-h-5 flex-1 overflow-hidden text-ellipsis whitespace-nowrap break-all text-left text-[12.5px] leading-3 ${
+            className={`conversation-region-2 relative max-h-5 flex-1 overflow-hidden text-ellipsis whitespace-nowrap break-all text-left text-[12.5px] leading-3 bg-transparent dark:hover:bg-blue-500 dark:hover:text-yellow-500 ${
               selectedConversation?.id === conversation.id ? 'pr-12' : 'pr-1'
             }`}
           >
@@ -190,19 +190,19 @@ export const ConversationComponent = ({ conversation}: Props) => {
 
       {(isDeleting || isRenaming) &&
         selectedConversation?.id === conversation.id && (
-          <div className="absolute right-1 z-10 flex text-gray-300">
+          <div className="absolute right-1 z-10 flex text-gray-300 bg-transparent dark:hover:bg-blue-500 dark:hover:text-yellow-500">
             <SidebarActionButton handleClick={handleConfirm}>
-              <IconCheck size={18} />
+              <IconCheck size={18} className="bg-transparent dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>
             </SidebarActionButton>
             <SidebarActionButton handleClick={handleCancel}>
-              <IconX size={18} />
+              <IconX size={18} className="bg-transparent dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>
             </SidebarActionButton>
           </div>
         )}
 
 
       { checkConversations &&  (
-        <div className="relative flex items-center">
+        <div className="conversation-region-3 relative flex items-center bg-transparent dark:hover:bg-blue-500 dark:hover:text-yellow-500">
           <div key={conversation.id} className="absolute right-4 z-10">
               <input
               type="checkbox"
@@ -215,12 +215,12 @@ export const ConversationComponent = ({ conversation}: Props) => {
 
       {selectedConversation?.id === conversation.id &&
         !isDeleting && !isRenaming && !checkConversations &&
-        ( <div className="absolute right-1 z-10 flex text-gray-300">
+        ( <div className="conversation-edit-areas absolute right-1 z-10 flex text-gray-300 dark:hover:bg-blue-500 dark:hover:text-yellow-500">
             <SidebarActionButton handleClick={handleOpenRenameModal} title="Rename Conversation">
-              <IconPencil size={18} />
+              <IconPencil size={18}className="bg-transparent dark:hover:bg-blue-500 dark:hover:text-yellow-500" />
             </SidebarActionButton>
             <SidebarActionButton handleClick={handleOpenDeleteModal} title="Delete Conversation">
-              <IconTrash size={18} />
+              <IconTrash size={18} className="bg-transparent dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>
             </SidebarActionButton>
           </div>
         )}

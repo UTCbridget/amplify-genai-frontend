@@ -93,7 +93,7 @@ export const RemoteMessages: FC<Props> = memo(({
     // @ts-ignore
     return (
         <div
-            className={`bg-gray-50 text-blue-500 dark:bg-[#444654] dark:text-white`}
+            className={`bg-gray-50 text-blue-500 dark:bg-blue-500 dark:text-white`}
             style={{overflowWrap: 'anywhere'}}
         >
             <>

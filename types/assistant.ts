@@ -3,7 +3,7 @@ import {AttachedDocument} from "@/types/attacheddocument";
 
 
 export enum AssistantProviderID {
-    AMPLIFY = 'amplify',
+    AMPLIFY = 'chattutc',
     OPENAI = 'openai'
 }
 
@@ -37,7 +37,7 @@ export const DEFAULT_ASSISTANT: Assistant = {
     id: 'chat',
     definition:
         {
-            provider:'amplify',
+            provider:'chattutc',
             name: "Standard Conversation",
             description: "No assistant will be used.",
             instructions: DEFAULT_SYSTEM_PROMPT,

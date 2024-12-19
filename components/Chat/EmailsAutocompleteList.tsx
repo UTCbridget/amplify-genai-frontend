@@ -95,12 +95,12 @@ const EmailModal: FC<EmailModalProps> = ({ isOpen, onClose, onSubmit, input, set
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
             <div className="fixed inset-0 z-10 overflow-hidden">
                 <div className="flex items-center justify-center min-h-screen pt-4 pb-20 text-center sm:block sm:p-0">
-                    <div className="inline-block overflow-y-auto  overflow-x-hidden rounded-lg border border-gray-300 bg-white px-4 pt-5 text-left align-bottom shadow-xl transition-all dark:bg-[#112e51] sm:my-8 sm:w-full sm:max-w-[480px] sm:align-middle"
+                    <div className="inline-block overflow-y-auto  overflow-x-hidden  border border-gray-300 bg-white px-4 pt-5 text-left align-bottom shadow-xl transition-all dark:bg-[#112e51] sm:my-8 sm:w-full sm:max-w-[480px] sm:align-middle"
                         style={{ transform: 'translateY(+22%)', position: 'relative' }}>
                         <div className="max-h-[calc(100vh-10rem)] p-0.5 overflow-y-auto">
                             {message}
                                 <input ref={inputRef}
-                                    className="mt-2 w-full rounded-lg border-2 border-[#0dcfda] px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-2 border-[#0dcfda] dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                    className="mt-2 w-full  border-2 border-[#0dcfda] px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-2 border-[#0dcfda] dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
                                     type="text"
                                     value={input}
                                     onChange={async (e) => {
@@ -132,7 +132,7 @@ const EmailModal: FC<EmailModalProps> = ({ isOpen, onClose, onSubmit, input, set
                                         <ul className="suggestions-list">
                                         {suggestions.map((suggestion, index) => (
                                             <li key={index} onClick={() => handleSuggestionClick(suggestion)}
-                                            className="cursor-pointer p-1 border-b border-neutral-300 dark:border-b-neutral-600 hover:bg-neutral-200 dark:hover:bg-[#051228]/90">
+                                            className="cursor-pointer p-1 border-b border-neutral-300 dark:border-b-neutral-600 hover:bg-neutral-200 dark:hover:bg-blue-500">
 
                                                 {suggestion}
                                             </li>
@@ -143,14 +143,14 @@ const EmailModal: FC<EmailModalProps> = ({ isOpen, onClose, onSubmit, input, set
                             <div className="mt-2 flex flex-row items-center justify-end p-4 bg-white dark:bg-[#112e51]">
                                 <button
                                     type="button"
-                                    className="mr-2 w-full px-4 py-2 border rounded-lg shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300"
+                                    className="mr-2 w-full px-4 py-2 border  shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300"
                                     onClick={onClose}
                                 >
                                     Cancel
                                 </button>
                                 <button
                                     type="button"
-                                    className="w-full px-4 py-2 border rounded-lg shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300"
+                                    className="w-full px-4 py-2 border  shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300"
                                     onClick={onSubmit}
                                 >
                                     OK

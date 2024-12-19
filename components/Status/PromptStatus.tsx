@@ -75,7 +75,7 @@ export const PromptStatus: React.FC<PromptStatusProps> = ({ status }) => {
     return (
         <>
             <div
-                className="rounded-xl text-neutral-800 hover:opacity-50 dark:text-white bg-neutral-200 dark:bg-[#051228] shadow-lg h-12 mb-2 mr-2"
+                className=" text-neutral-800 hover:opacity-50 dark:text-white bg-neutral-200 dark:bg-transparent shadow-lg h-12 mb-2 mr-2"
                 onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
@@ -84,7 +84,7 @@ export const PromptStatus: React.FC<PromptStatusProps> = ({ status }) => {
             >
                 <div className="flex flex-row">
                     <div
-                        className="w-14 h-12 flex-none bg-cover rounded-l-xl text-center overflow-hidden"
+                        className="w-14 h-12 flex-none bg-cover  text-center overflow-hidden"
                         style={{backgroundImage: getCoverBackgroundImage(status)}}
                     >
                         <div className="text-white flex h-full w-full justify-center items-center">{getLeadingComponent(status)}</div>
@@ -105,7 +105,7 @@ export const PromptStatus: React.FC<PromptStatusProps> = ({ status }) => {
                 </div>
             </div>
             {status.message && status.summary && (status.summary !== status.message && detailsOpen) && (
-                <div className="mx-2 mt-0 pt-7 px-5 bg-neutral-200 dark:bg-[#051228] rounded-lg">
+                <div className="mx-2 mt-0 pt-7 px-5 bg-neutral-200 dark:bg-transparent ">
                     <PromptStatusDetails status={status}/>
                 </div>
             )}

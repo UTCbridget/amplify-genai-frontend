@@ -141,7 +141,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                     />
 
                     <div
-                        className="dark:border-netural-400 inline-block overflow-hidden rounded-lg border border-gray-300 bg-white px-4 pt-5 text-left align-bottom shadow-xl transition-all dark:bg-[#112e51] sm:my-8 sm:w-full sm:max-w-[770px] sm:align-middle"
+                        className="dark:border-netural-400 inline-block overflow-hidden  border border-gray-300 bg-white px-4 pt-5 text-left align-bottom shadow-xl transition-all dark:bg-[#112e51] sm:my-8 sm:w-full sm:max-w-[770px] sm:align-middle"
                         ref={modalRef}
                         role="dialog"
                     >
@@ -151,7 +151,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                                 {t('Assistant Name')}
                             </div>
                             <input
-                                className="mt-2 w-full rounded-lg border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
                                 placeholder={t('A name for your prompt.') || ''}
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
@@ -161,7 +161,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                                 {t('Description')}
                             </div>
                             <textarea
-                                className="mt-2 w-full rounded-lg border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
                                 style={{resize: 'none'}}
                                 placeholder={t('A description for your prompt.') || ''}
                                 value={description}
@@ -173,7 +173,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                                 {t('Instructions')}
                             </div>
                             <textarea
-                                className="mt-2 w-full rounded-lg border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
                                 style={{resize: 'none'}}
                                 placeholder={
                                     t(
@@ -246,7 +246,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                                     <div className="flex flex-row justify-end">
                                         <button
                                             type="button"
-                                            className="rounded-t-xl dark:text-white border-neutral-500 text-neutral-900 focus:outline-none dark:border-neutral-800 dark:bg-[#051228] dark:text-black"
+                                            className=" dark:text-white border-neutral-500 text-neutral-900 focus:outline-none dark:border-neutral-800 dark:bg-transparent dark:text-black"
                                             onClick={() => {
                                                 setShowDataSourceSelector(false);
                                             }}
@@ -254,7 +254,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                                             <IconCircleX/>
                                         </button>
                                     </div>
-                                    <div className="bg-white dark:bg-[#051228]">
+                                    <div className="bg-white dark:bg-transparent">
                                         <DataSourceSelector
                                             minWidth="500px"
                                             onDataSourceSelected={(d) => {
@@ -280,7 +280,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                                         {t('URI')}
                                     </div>
                                     <input
-                                        className="mt-2 w-full rounded-lg border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                        className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
                                         placeholder={t('') || ''}
                                         value={uri || ""}
                                         onChange={(e) => setUri(e.target.value)}
@@ -291,7 +291,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                         <div className="flex flex-row items-center justify-end p-4 bg-white dark:bg-[#112e51]">
                             <button
                                 type="button"
-                                className="mr-2 w-full px-4 py-2 border rounded-lg shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300"
+                                className="mr-2 w-full px-4 py-2 border  shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300"
                                 onClick={() => {
                                     onCancel();
                                 }}
@@ -300,7 +300,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                             </button>
                             <button
                                 type="button"
-                                className="w-full px-4 py-2 border rounded-lg shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300"
+                                className="w-full px-4 py-2 border  shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300"
                                 onClick={() => {
                                     handleUpdateAssistant();
                                 }}

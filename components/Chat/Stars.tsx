@@ -40,7 +40,7 @@ export const Stars: FC<Props> = ({ starRating, setStars }) => {
                     }}
                     title="Rate Response"
                 >
-                    {star <= currentStars ? <FilledStar/> : <Star/>}
+                    {star <= currentStars ? <FilledStar className="fill-yellow-500 text-yellow-500"/> : <Star/>}
                 </button>
             ))}
         </div>

@@ -34,24 +34,24 @@ export const TabSidebar: React.FC<TabSidebarProps> = ({ side, children, footerCo
 
     return isOpen ? (
         <div className={`fixed top-0 ${side}-0 z-40 flex h-full w-[280px] flex-none ${side === 'left' ? 'border-r dark:border-r-[#051228]' : 'border-l dark:border-l-[#051228]'}
-            flex-col space-y-0 bg-white text-black dark:text-white bg-neutral-100 dark:bg-[#051228] text-[14px] sm:relative sm:top-0`}>
+            flex-col space-y-0 bg-white text-black dark:text-white bg-neutral-100 dark:bg-transparent text-[14px] sm:relative sm:top-0`}>
             {isMultipleTabs && (
-                <div className="flex flex-row gap-1 bg-neutral-100 dark:bg-[#051228] rounded-t">
+                <div className="flex flex-row gap-1 bg-neutral-100 dark:bg-transparent ">
                     {childrenArray.map((child, index) => (
                         <button
                             key={index}
                             onClick={() => setActiveTab(index)}
                             title={child.props.title}
-                            className={`px-3 py-2 rounded-t ${activeTab === index ? 'border-l border-t border-r dark:border-gray-500 dark:text-white' : 'text-gray-400 dark:text-gray-600'} dark:hover:text-yellow-500`}>
+                            className={`px-3 py-2  ${activeTab === index ? 'border-l border-t border-r dark:border-gray-500 dark:text-white' : 'text-gray-400 dark:text-gray-600'} dark:hover:text-yellow-500`}>
                             {child.props.icon}
                         </button>
                     ))}
                 </div>
             )}
-            <div className="overflow-auto bg-neutral-100 dark:bg-[#051228] p-0 m-0 flex-grow">
+            <div className="overflow-auto bg-neutral-100 dark:bg-transparent p-0 m-0 flex-grow">
                 {childrenArray[activeTab].props.children}
             </div>
-            <div className="w-full mt-auto p-2 bg-neutral-100 dark:bg-[#051228]">
+            <div className="w-full mt-auto p-2 bg-neutral-100 dark:bg-transparent">
                 {footerComponent}
             </div>
             <CloseSidebarButton onClick={toggleOpen} side={side} />

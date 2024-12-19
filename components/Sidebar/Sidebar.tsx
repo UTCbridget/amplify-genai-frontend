@@ -42,7 +42,6 @@ const Sidebar = <T,>({
   setFolderSort,
 }: Props<T>) => {
 
-
   const { t } = useTranslation('promptbar');
 
   const allowDrop = (e: any) => {
@@ -57,7 +56,7 @@ const Sidebar = <T,>({
     e.target.style.background = 'none';
   };
 
-  const addItemButton = (width: string) => ( <button className={`text-sidebar flex ${width} flex-shrink-0 justify-between cursor-pointer select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white dark:hover:text-yellow-500 transition-colors duration-200 hover:bg-gray-500/10`}
+  const addItemButton = (width: string) => ( <button className={`text-sidebar flex ${width} flex-shrink-0 justify-between cursor-pointer select-none items-center gap-3 border dark:border-white/20 p-3 dark:text-white dark:hover:text-yellow-500 transition-colors duration-200 bg-transparent hover:bg-blue-500`}
                               onClick={() => {
                                 handleCreateItem();
                                 handleSearchTerm('');
@@ -67,13 +66,12 @@ const Sidebar = <T,>({
                                 <svg viewBox="0 0 640 512" className="w-6"><path fill="#fdb736" d="M489.6 256c0 41.6-32 73.6-73.6 73.6s-73.6-32-73.6-73.6s32-73.6 73.6-73.6s73.6 35.2 73.6 73.6zM246.4 336a73.6 73.6 0 1 0 0 147.2 73.6 73.6 0 1 0 0-147.2zM243.2 35.2a73.6 73.6 0 1 0 0 147.2 73.6 73.6 0 1 0 0-147.2z"></path></svg>
                               </button>);
 
-
   const addButtonForSide = (side: string) => {
     if (side === 'left') return addItemButton("w-[205px]")
 
     const addAssistantButton = (
       <button
-        className="text-sidebar flex w-[205px] flex-shrink-0 cursor-pointer select-none items-center justify-between gap-3 border dark:border-white/20 p-3 dark:text-white dark:hover:text-yellow-500 transition-colors duration-200 hover:bg-gray-500/10"
+        className="text-sidebar flex w-[205px] flex-shrink-0 cursor-pointer select-none items-center justify-between gap-3 border dark:border-white/20 p-3 dark:text-white dark:hover:text-yellow-500 transition-colors duration-200 bg-transparent hover:bg-blue-500"
         onClick={() => {
           handleCreateAssistantItem();
           handleSearchTerm('');
@@ -92,12 +90,12 @@ const Sidebar = <T,>({
   return (
     <div className={`border-t dark:border-white/20 overflow-x-hidden h-full`}>
       <div
-        className={`fixed top-0 ${side}-0 z-40 flex h-full w-[270px] flex-none flex-col space-y-2 bg-neutral-100 dark:bg-[#051228] p-2 text-[14px] transition-all sm:relative sm:top-0`}
+        className={`fixed top-0 ${side}-0 z-40 flex h-full w-[270px] flex-none flex-col space-y-2 bg-transparent p-2 text-[14px] transition-all sm:relative sm:top-0 xs:dark:bg-blue-500`}
       >
         <div className="flex items-center">
           {addButtonForSide(side)}
           <button
-            className="ml-2 flex flex-shrink-0 cursor-pointer items-center gap-3 border dark:border-white/20 p-3 text-sm dark:text-white transition-colors duration-200 hover:bg-gray-500/10"
+            className="folder-button ml-2 flex flex-shrink-0 cursor-pointer items-center gap-3 border dark:border-white/20 p-3 text-sm dark:text-white transition-colors duration-200 hover:bg-blue-500 dark:hover:text-yellow-500"
             onClick={handleCreateFolder}
             title="Create Folder"
           >
@@ -110,7 +108,7 @@ const Sidebar = <T,>({
           searchTerm={searchTerm}
           onSearch={handleSearchTerm}
         />
-
+        <div className="conversation-prompt-wrapper">
         <KebabMenu
         label={side === 'left' ? "Conversations": "Prompts"} 
         items={items}
@@ -119,7 +117,7 @@ const Sidebar = <T,>({
         />
         <div className="relative flex-grow overflow-y-auto w-[268px]">
           {items?.length > 0 && (
-            <div className="flex border-b dark:border-white/20 pb-2">
+            <div className="flex border-b dark:border-white/20 pb-2 bg-transparent">
               {folderComponent}
             </div>
           )}
@@ -141,7 +139,10 @@ const Sidebar = <T,>({
               </span>
             </div>
           )}
+           
         </div>
+        </div>
+
         {footerComponent}
       </div>
     </div>

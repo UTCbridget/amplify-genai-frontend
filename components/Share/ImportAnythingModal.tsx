@@ -286,7 +286,7 @@ export const ImportAnythingModal: FC<ImportModalProps> = (
             <div className="flex items-center p-2" ref={itemRefs.current[item.id]} key={item.id}>
                 <input
                     type="checkbox"
-                    className="form-checkbox rounded-lg border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-[#40414F] dark:focus:bg-neutral-700 dark:ring-offset-neutral-300 dark:border-opacity-50"
+                    className="form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-[#40414F] dark:focus:bg-neutral-700 dark:ring-offset-neutral-300 dark:border-opacity-50"
                     checked={isSelected(item, itemType)}
                     onChange={() => {
                         handleItemSelect(item, itemType)
@@ -384,7 +384,7 @@ export const ImportAnythingModal: FC<ImportModalProps> = (
                     className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
                     <div className="hidden sm:inline-block sm:h-screen sm:align-middle" aria-hidden="true"/>
                     <div
-                        className="border-neutral-400 dark:border-netural-400 inline-block transform overflow-y-auto rounded-lg border border-gray-300 bg-white px-4 py-5 text-left align-bottom shadow-xl transition-all dark:bg-[#112e51] sm:my-8 sm:max-w-lg sm:p-6 sm:align-middle"
+                        className="border-neutral-400 dark:border-netural-400 inline-block transform overflow-y-auto  border border-gray-300 bg-white px-4 py-5 text-left align-bottom shadow-xl transition-all dark:bg-[#112e51] sm:my-8 sm:max-w-lg sm:p-6 sm:align-middle"
                         role="dialog"
                     >
                         {
@@ -408,7 +408,7 @@ export const ImportAnythingModal: FC<ImportModalProps> = (
 
                                     <h3 className="text-black dark:text-white text-lg mt-4 border-b">Note</h3>
                                     <div
-                                        className="mt-2 w-full rounded-lg border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                        className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
                                     >{note}</div>
 
                                     {includePrompts && prompts.length > 0 && (
@@ -416,7 +416,7 @@ export const ImportAnythingModal: FC<ImportModalProps> = (
                                             <div className="mt-3 flex items-center border-b ">
                                                 <input
                                                     type="checkbox"
-                                                    className="mx-2 form-checkbox rounded-lg border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-[#40414F] dark:ring-offset-neutral-300 dark:border-opacity-50"
+                                                    className="mx-2 form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-[#40414F] dark:ring-offset-neutral-300 dark:border-opacity-50"
                                                     checked={promptsChecked}
                                                     onChange={(e) => handlePromptsCheck(e.target.checked)}
                                                 />
@@ -431,7 +431,7 @@ export const ImportAnythingModal: FC<ImportModalProps> = (
                                             <div className="mt-3 flex items-center border-b ">
                                                 <input
                                                     type="checkbox"
-                                                    className="mx-2 form-checkbox rounded-lg border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-[#40414F] dark:ring-offset-neutral-300 dark:border-opacity-50"
+                                                    className="mx-2 form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-[#40414F] dark:ring-offset-neutral-300 dark:border-opacity-50"
                                                     checked={conversationsChecked}
                                                     onChange={(e) => handleConversationsCheck(e.target.checked)}
                                                 />
@@ -446,7 +446,7 @@ export const ImportAnythingModal: FC<ImportModalProps> = (
                                             <div className="mt-3 flex items-center border-b ">
                                                 <input
                                                     type="checkbox"
-                                                    className="mx-2 form-checkbox rounded-lg border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-[#40414F] dark:ring-offset-neutral-300 dark:border-opacity-50"
+                                                    className="mx-2 form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-[#40414F] dark:ring-offset-neutral-300 dark:border-opacity-50"
                                                     checked={foldersChecked}
                                                     onChange={(e) => handleFoldersCheck(e.target.checked)}
                                                 />
@@ -463,7 +463,7 @@ export const ImportAnythingModal: FC<ImportModalProps> = (
 
                             <button
                                 type="button"
-                                className="w-full px-4 py-2 mt-6 border rounded-lg shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300"
+                                className="w-full px-4 py-2 mt-6 border  shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300"
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     resetSelection();
@@ -476,7 +476,7 @@ export const ImportAnythingModal: FC<ImportModalProps> = (
                                 <button
                                     type="button"
                                     style={{opacity: !canImport() ? 0.3 : 1}}
-                                    className="ml-2 w-full px-4 py-2 mt-6 border rounded-lg shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300 ${selectedPeople.length === 0 || (selectedPromptsState.length === 0 && selectedConversationsState.length === 0 && selectedFoldersState.length === 0) ? 'cursor-not-allowed' : ''}"
+                                    className="ml-2 w-full px-4 py-2 mt-6 border  shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300 ${selectedPeople.length === 0 || (selectedPromptsState.length === 0 && selectedConversationsState.length === 0 && selectedFoldersState.length === 0) ? 'cursor-not-allowed' : ''}"
                                     onClick={handleImport}
                                     disabled={!canImport()}
                                 >
