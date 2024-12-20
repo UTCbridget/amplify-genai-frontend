@@ -25,7 +25,7 @@ import UserMessageEditor from "@/components/Chat/ChatContentBlocks/UserMessageEd
 import AssistantMessageEditor from "@/components/Chat/ChatContentBlocks/AssistantMessageEditor";
 import {Style} from "css-to-react-native";
 import {Prompt} from "@/types/prompt";
-import {Stars} from "@/components/Chat/Stars";
+/*import {Stars} from "@/components/Chat/Stars";*/
 import {DownloadModal} from "@/components/Download/DownloadModal";
 import Loader from "@/components/Loader/Loader";
 import {getFileDownloadUrl} from "@/services/fileService"
@@ -207,8 +207,8 @@ export const ChatMessage: FC<Props> = memo(({
     return (
         <div
             className={`assistant-wrapper group md:px-4 ${message.role === 'assistant'
-                ? 'border-b border-black/10 bg-gray-50 text-blue-500 dark:border-yellow-500 dark:bg-blue-300/10 dark:text-white'
-                : 'border-b border-black/10 bg-white text-blue-500 dark:border-white/10 dark:bg-blue-300/10 dark:text-white'
+                ? 'border-b border-black/10 bg-gray-50 text-blue-500 dark:border-yellow-500 dark:bg-blue-400/5 dark:text-white'
+                : 'border-b border-black/10 bg-white text-blue-500 dark:border-white/10 dark:bg-blue-400/5 dark:text-white'
             }`}
             style={{overflowWrap: 'anywhere'}}
         >
@@ -258,7 +258,7 @@ export const ChatMessage: FC<Props> = memo(({
 
                 <div className="prose mt-[-2px] w-full dark:prose-invert">
                     {message.role === 'user' ? (
-                        <div className="flex flex-grow">
+                        <div className="flex flex-grow flex-col">
                             {isEditing ? (
 
                                 <UserMessageEditor
@@ -305,7 +305,7 @@ export const ChatMessage: FC<Props> = memo(({
 
                             {!isEditing && (
                                 <div
-                                    className="md:-mr-8 ml-1 md:ml-0 flex flex-col md:flex-col gap-4 md:gap-1 items-center md:items-start justify-end md:justify-start">
+                                    className="user-chat-actions md:-mr-8 ml-1 md:ml-0 flex flex-row gap-4 md:gap-1 items-center md:items-start justify-end md:justify-start">
                                     {/*<div*/}
                                     {/*    className="md:-mr-8 ml-1 md:ml-0 flex flex-col md:flex-row gap-4 md:gap-1 items-center md:items-start justify-end md:justify-start">*/}
                                     <div>
@@ -316,7 +316,7 @@ export const ChatMessage: FC<Props> = memo(({
                                             />
                                         ) : (
                                             <button
-                                                className="invisible group-hover:visible focus:visible text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                                                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
                                                 onClick={copyOnClick}
                                                 title="Copy Prompt"
                                             >
@@ -326,7 +326,7 @@ export const ChatMessage: FC<Props> = memo(({
                                     </div>
                                     <div>
                                         <button
-                                            className="invisible group-hover:visible focus:visible text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                                            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
                                             onClick={() => setIsDownloadDialogVisible(true)}
                                             title="Download Prompt"
                                         >
@@ -335,7 +335,7 @@ export const ChatMessage: FC<Props> = memo(({
                                     </div>
                                     <div>
                                         <button
-                                            className="invisible group-hover:visible focus:visible text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                                            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
                                             onClick={toggleEditing}
                                             title="Edit Prompt"
                                         >
@@ -344,7 +344,7 @@ export const ChatMessage: FC<Props> = memo(({
                                     </div>
                                     <div>
                                         <button
-                                            className="invisible group-hover:visible focus:visible text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                                            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
                                             onClick={handleDeleteMessage}
                                             title="Delete Prompt"
                                         >
@@ -356,7 +356,7 @@ export const ChatMessage: FC<Props> = memo(({
                         </div>
                     ) : ( // Assistant message
                         <div className="flex flex-col w-full" ref={markdownComponentRef}>
-                            <div className="flex flex-row w-full">
+                            <div className="chattutc-message-wrapper flex flex-col w-full">
                                 <div className="flex flex-col w-full">
                                     {(selectedConversation?.messages.length === messageIndex + 1) && (
                                         <PromptingStatusDisplay statusHistory={status}/>
@@ -398,46 +398,52 @@ export const ChatMessage: FC<Props> = memo(({
                                 </div>
 
                                 <div
-                                    className="md:-mr-8 ml-1 md:ml-0 flex flex-col md:flex-col gap-4 md:gap-1 items-center md:items-start justify-end md:justify-start">
+                                    className="chattutc-chat-actions md:-mr-8 ml-1 md:ml-0 flex flex-row gap-4 md:gap-1 items-center md:items-start justify-end md:justify-start">
                                     {messagedCopied ? (
                                         <IconCheck
                                             size={20}
                                             className="text-green-500 dark:text-green-400"
                                         />
                                     ) : (
-                                        <button
-                                            className="invisible group-hover:visible focus:visible text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
-                                            onClick={copyOnClick}
-                                            title="Copy Response"
-                                        >
-                                            <IconCopy size={20}/>
-                                        </button>
+                                        <div>
+                                            <button
+                                                className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                                                onClick={copyOnClick}
+                                                title="Copy Response"
+                                            >
+                                                <IconCopy size={20}/>
+                                            </button>
+                                        </div>
                                     )}
-                                    <button
-                                        className="invisible group-hover:visible focus:visible text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
-                                        onClick={() => setIsDownloadDialogVisible(true)}
-                                        title="Download Response"
-                                    >
-                                        <IconDownload size={20}/>
-                                    </button>
-                                    <button
-                                        className="invisible group-hover:visible focus:visible text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
-                                        title="Email Response"
-                                    >
-                                        <a className="invisible group-hover:visible focus:visible text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
-                                           href={`mailto:?body=${encodeURIComponent(messageContent)}`}>
-                                            <IconMail size={20}/>
-                                        </a>
-                                    </button>
-                                    <button
-                                        className="invisible group-hover:visible focus:visible text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
-                                        onClick={toggleEditing}
-                                        title="Edit Response"
-                                    >
-                                        <IconEdit size={20}/>
-                                    </button>
-
-
+                                    <div>
+                                        <button
+                                            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                                            onClick={() => setIsDownloadDialogVisible(true)}
+                                            title="Download Response"
+                                        >
+                                            <IconDownload size={20}/>
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button
+                                            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                                            title="Email Response"
+                                        >
+                                            <a className=" text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                                            href={`mailto:?body=${encodeURIComponent(messageContent)}`}>
+                                                <IconMail size={20}/>
+                                            </a>
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button
+                                            className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+                                            onClick={toggleEditing}
+                                            title="Edit Response"
+                                        >
+                                            <IconEdit size={20}/>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             {(messageIsStreaming || isEditing) ? null : (
@@ -445,13 +451,13 @@ export const ChatMessage: FC<Props> = memo(({
                                     onSendPrompt(p)
                                 }}/>
                             )}
-                            {(messageIsStreaming || isEditing) ? null : (
+                            {/*{(messageIsStreaming || isEditing) ? null : (
                                 <Stars starRating={message.data && message.data.rating || 0} setStars={(r) => {
                                     if (onEdit) {
                                         onEdit({...message, data: {...message.data, rating: r}});
                                     }
                                 }}/>
-                            )}
+                            )}*/}
                             {(messageIsStreaming && messageIndex == (selectedConversation?.messages.length ?? 0) - 1) ?
                                 // <LoadingIcon />
                                 <Loader type="ping" size="48"/>

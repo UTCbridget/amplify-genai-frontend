@@ -417,7 +417,7 @@ const DataSourcesTable = () => {
                     colorScheme: lightMode, // or 'light', depending on your preference or state
                     colors: {
                         gray: [myTailwindColors.gray],
-                        blue: [myTailwindColors.blue], // Example color for 'blue' palette
+                        blue: ["#e7eaee", "#c4cbd4", "#a0abb9", "#586d85", "#112e51", "#0f2949", "#071a31", "#051228"],
                         red: [myTailwindColors.red],   // Example color for 'red' palette
                         green: [myTailwindColors.green] // Example color for 'green' palette
                     },

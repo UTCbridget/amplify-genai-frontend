@@ -33,7 +33,7 @@ export const TabSidebar: React.FC<TabSidebarProps> = ({ side, children, footerCo
     const isMultipleTabs = childrenArray.length > 1;
 
     return isOpen ? (
-        <div className={`fixed top-0 ${side}-0 z-40 flex h-full w-[280px] flex-none ${side === 'left' ? 'border-r dark:border-r-[#051228]' : 'border-l dark:border-l-[#051228]'}
+        <div className={`sidebar-wrapper fixed top-0 ${side}-0 z-40 flex h-full w-[280px] flex-none ${side === 'left' ? 'border-r dark:border-r-[#051228]' : 'border-l dark:border-l-[#051228]'}
             flex-col space-y-0 bg-white text-black dark:text-white bg-neutral-100 dark:bg-transparent text-[14px] sm:relative sm:top-0`}>
             {isMultipleTabs && (
                 <div className="flex flex-row gap-1 bg-neutral-100 dark:bg-transparent ">
@@ -48,7 +48,7 @@ export const TabSidebar: React.FC<TabSidebarProps> = ({ side, children, footerCo
                     ))}
                 </div>
             )}
-            <div className="overflow-auto bg-neutral-100 dark:bg-transparent p-0 m-0 flex-grow">
+            <div className="tabbed-sidebar overflow-auto bg-neutral-100 dark:bg-transparent p-0 m-0 flex-grow">
                 {childrenArray[activeTab].props.children}
             </div>
             <div className="w-full mt-auto p-2 bg-neutral-100 dark:bg-transparent">

@@ -542,10 +542,11 @@ const DataSourcesTableScrolling: FC<Props> = ({
 
             <MantineProvider
                 theme={{
+                    fontFamily: 'Raleway, sans-serif',
                     colorScheme: lightMode, // or 'light', depending on your preference or state
                     colors: {
                         //gray: ["#333333","#333333","#333333","#333333","#333333","#333333","#333333","#333333"],
-                        dark: ["#dddddd", "#000000", "#000000", "#555765", "#051228", "#051228", "#051228", "#051228"]
+                        blue: ["#e7eaee", "#c4cbd4", "#a0abb9", "#586d85", "#112e51", "#0f2949", "#071a31", "#051228"]
                     },
                     primaryShade: 1,
                     // You can also map Mantine's theme colors to match Tailwind's classes as needed

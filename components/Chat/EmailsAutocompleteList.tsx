@@ -100,7 +100,7 @@ const EmailModal: FC<EmailModalProps> = ({ isOpen, onClose, onSubmit, input, set
                         <div className="max-h-[calc(100vh-10rem)] p-0.5 overflow-y-auto">
                             {message}
                                 <input ref={inputRef}
-                                    className="mt-2 w-full  border-2 border-[#0dcfda] px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-2 border-[#0dcfda] dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                    className="mt-2 w-full  border-2 border-[#0dcfda] px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-2 border-[#0dcfda] dark:border-opacity-50 dark:bg-blue-700 dark:text-neutral-100"
                                     type="text"
                                     value={input}
                                     onChange={async (e) => {

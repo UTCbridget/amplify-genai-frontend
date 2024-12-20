@@ -61,7 +61,7 @@ import { WorkflowDefinition } from "@/types/workflow";
 import { saveWorkflowDefinitions } from "@/utils/app/workflows";
 import SharedItemsList from "@/components/Share/SharedItemList";
 import { saveFeatures } from "@/utils/app/features";
-import WorkspaceList from "@/components/Workspace/WorkspaceList";
+/*import WorkspaceList from "@/components/Workspace/WorkspaceList";*/
 import { Market } from "@/components/Market/Market";
 import { getBasePrompts } from "@/services/basePromptsService";
 import { LatestExportFormat } from "@/types/export";
@@ -1095,7 +1095,7 @@ const Home = ({
                             />
                         </div>
 
-                        <div className="flex h-full w-full pt-[48px] sm:pt-0 bg-[url('/chattutc-light-bg.jpg')] dark:bg-[url('/chattutc-dark-bg.jpg')] bg-cover bg-right">
+                        <div className="main-chat-body flex h-full w-full pt-[48px] sm:pt-0 bg-[url('/chattutc-light-bg.jpg')] dark:bg-[url('/chattutc-darkest-bg.jpg')] bg-cover bg-right">
 
                             <TabSidebar
                                 side={"left"}
@@ -1120,7 +1120,7 @@ const Home = ({
                             >
                                 <Tab icon={<IconMessage />} title="Chats"><Chatbar /></Tab>
                                 <Tab icon={<IconShare />} title="Share"><SharedItemsList /></Tab>
-                                <Tab icon={<IconTournament />} title="Workspaces"><WorkspaceList /></Tab>
+                                {/*<Tab icon={<IconTournament />} title="Workspaces"><WorkspaceList /></Tab>*/}
                                 <Tab icon={<IconSettings />} title="Settings"><SettingsBar /></Tab>
                             </TabSidebar>
 
@@ -1139,12 +1139,12 @@ const Home = ({
                             </div>
 
 
-                            <TabSidebar
+                            {/*<TabSidebar
                                 side={"right"}
                             >
                                 <Tab icon={<Icon3dCubeSphere />}><Promptbar /></Tab>
-                                {/*<Tab icon={<IconBook2/>}><WorkflowDefinitionBar/></Tab>*/}
-                            </TabSidebar>
+                                {<Tab icon={<IconBook2/>}><WorkflowDefinitionBar/></Tab>
+                            </TabSidebar>*/}
 
                         </div>
 

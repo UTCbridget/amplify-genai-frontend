@@ -460,7 +460,7 @@ const onAssistantChange = (assistant: Assistant) => {
         };
     }, []);
 
-    let buttonClasses = "left-1 top-2 p-1 text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200";
+    let buttonClasses = "left-1 top-2 p-1 text-neutral-800 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-transparent dark:text-neutral-100 dark:hover:text-neutral-200";
     if (isWorkflowOn) {
         buttonClasses += " bg-green-400 text-white"; // provide your desired 'on' state style classes
     }
@@ -531,9 +531,9 @@ const onAssistantChange = (assistant: Assistant) => {
 
     return (
         <div
-            className="absolute bottom-0 left-0 w-full border-transparent pt-6 dark:border-white/20 md:pt-2">
+            className="input-chat-wrapper">
             <div
-                className="flex flex-col justify-center items-center stretch mx-2 mt-4 flex flex-row gap-3 last:mb-2 md:mx-4 md:mt-[52px] md:last:mb-6 lg:mx-auto lg:max-w-3xl">
+                className="chat-input flex flex-col justify-center items-center stretch mx-2 mb-6 flex flex-row gap-3 lg:mx-auto">
                
                {!showScrollDownButton && !messageIsStreaming && featureFlags.qiSummary && !showDataSourceSelector &&
                (selectedConversation && selectedConversation.messages.length > 0) &&  (
@@ -567,7 +567,7 @@ const onAssistantChange = (assistant: Assistant) => {
                     {messageIsStreaming && (
                         <>
                             <button
-                                className="mb-3 flex w-fit items-center gap-3 border border-neutral-200 bg-white py-2 px-4 text-black hover:opacity-50 dark:border-neutral-600 dark:bg-transparent dark:text-white md:mb-0 md:mt-2"
+                                className="mb-3 flex w-fit items-center gap-3 border border-neutral-200 bg-white py-2 px-4 text-black dark:border-neutral-600 dark:bg-transparent dark:text-white md:mb-0 md:mt-2"
                                 onClick={handleStopConversation}
                             >
                                 <IconPlayerStop size={16}/> {t('Stop Generating')}
@@ -615,18 +615,18 @@ const onAssistantChange = (assistant: Assistant) => {
 
                         {featureFlags.pluginsOnInput && (
                             <button
-                                className="left-1 top-2 p-1 text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-blue-500 dark:text-neutral-100 dark:hover:text-neutral-200"
+                                className="left-1 top-2 p-1 text-neutral-800 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-transparent dark:text-neutral-100 dark:hover:text-yellow-500"
                                 onClick={() => setShowPluginSelect(!showPluginSelect)}
                                 onKeyDown={(e) => {
                                 }}
                             >
-                                {plugin ? <IconBrandGoogle size={20} className="google-brand dark:hover:bg-blue-500 dark:hover:text-yellow-500"/> : <IconBolt size={20} className="bolt-icon dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>}
+                                {plugin ? <IconBrandGoogle size={20} className="google-brand dark:bg-transparent dark:hover:text-yellow-500"/> : <IconBolt size={20} className="bolt-icon dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>}
                             </button>
                         )}
 
                         {featureFlags.dataSourceSelectorOnInput && (
                             <button
-                                className="left-1 top-2 p-1 text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-blue-500 dark:text-neutral-100 dark:hover:text-neutral-200"
+                                className="left-1 top-2 p-1 text-neutral-800 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-transparent dark:text-neutral-100 dark:hover:text-yellow-50-"
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     setShowDataSourceSelector(!showDataSourceSelector);
@@ -636,7 +636,7 @@ const onAssistantChange = (assistant: Assistant) => {
                                 }}
                                 title="Files"
                             >
-                                <IconFiles size={20} className="google-brand dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>
+                                <IconFiles size={20} className="file-icon dark:text-neutral-100 dark:hover:text-yellow-500"/>
                             </button>
                         )}
 
@@ -671,7 +671,7 @@ const onAssistantChange = (assistant: Assistant) => {
                                 title="Select Assistants"
 
                             >
-                                <IconAt size={20} className="google-brand dark:hover:bg-blue-500 dark:hover:text-yellow-500"/>
+                                <IconAt size={20} className="at-icon dark:text-neutral-100 dark:hover:text-yellow-500"/>
                             </button>
                         )}
 
@@ -774,13 +774,13 @@ const onAssistantChange = (assistant: Assistant) => {
 
                         <textarea
                             ref={textareaRef}
-                            className="m-0 w-full resize-none border-0 bg-transparent p-0 py-2 pr-8 pl-10 text-black dark:bg-transparent dark:text-white md:py-3 md:pl-10"
+                            className="chat-input-textarea m-0 w-full resize-none border border-neutral-500 focus-visible:border-0 bg-transparent p-0 py-2 pr-8 pl-10 text-black dark:text-neutral-300 md:py-3 md:pl-10 mx-3 overflow-y-scroll"
                             style={{
                                 resize: 'none',
                                 bottom: `${textareaRef?.current?.scrollHeight}px`,
-                                maxHeight: '400px',
+                                maxHeight: '200px',
                                 overflow: `${
-                                    textareaRef.current && textareaRef.current.scrollHeight > 400
+                                    textareaRef.current && textareaRef.current.scrollHeight > 200
                                         ? 'auto'
                                         : 'hidden'
                                 }`,
@@ -798,15 +798,15 @@ const onAssistantChange = (assistant: Assistant) => {
                         />
 
                         <button
-                            className="right-2 top-2 p-1 text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-yellow-500"
+                            className="right-2 top-2 p-1 text-neutral-800 hover:bg-neutral-200 hover:text-neutral-900 dark:text-neutral-100 dark:hover:bg-transparent dark:hover:text-yellow-500"
                             onClick={handleSend}
                             title="Send Prompt"
                         >
                             {messageIsStreaming ? (
                                 <div
-                                    className="h-4 w-4 animate-spin  border-t-2 border-neutral-800 opacity-60 dark:border-neutral-100"></div>
+                                    className="h-4 w-4 animate-spin  border-t-2 border-neutral-800 dark:bg-transparent dark:border-neutral-100"></div>
                             ) : (
-                                <IconSend size={18}/>
+                                <IconSend size={18} className="send-icon dark:text-neutral-100 dark:hover:text-yellow-500" />
                             )}
                         </button>
 
@@ -817,7 +817,7 @@ const onAssistantChange = (assistant: Assistant) => {
                                     onClick={onScrollDownClick}
                                     title="Scroll Down"
                                 >
-                                    <IconArrowDown size={18}/>
+                                    <IconArrowDown size={18} className="arrowdown-icon dark:text-neutral-100 dark:hover:text-yellow-500"/>
                                 </button>
                             </div>
                         )}

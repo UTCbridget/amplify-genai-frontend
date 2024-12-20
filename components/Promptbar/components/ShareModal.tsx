@@ -45,21 +45,21 @@ export const ShareModal: FC<Props> = ({ prompt, onClose, onSharePrompt }) => {
                         <div className="text-sm font-bold text-black dark:text-neutral-200">
                             Name
                         </div>
-                        <div className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100">
+                        <div className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-blue-700 dark:text-neutral-100">
                             {prompt.name}
                         </div>
 
                         <div className="mt-6 text-sm font-bold text-black dark:text-neutral-200">
                             Description
                         </div>
-                        <div className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100" >
+                        <div className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-blue-700 dark:text-neutral-100" >
                             {prompt.description}
                         </div>
 
                         <div className="mt-6 text-sm font-bold text-black dark:text-neutral-200">
                             Prompt
                         </div>
-                        <div className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100" >
+                        <div className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-blue-700 dark:text-neutral-100" >
                             {prompt.content}
                         </div>
 

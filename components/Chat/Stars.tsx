@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+/*import React, {FC, useState} from 'react';
 import {IconStar, IconStarFilled} from '@tabler/icons-react';
 import styled from "styled-components";
 
@@ -45,4 +45,4 @@ export const Stars: FC<Props> = ({ starRating, setStars }) => {
             ))}
         </div>
     );
-};
+};*/

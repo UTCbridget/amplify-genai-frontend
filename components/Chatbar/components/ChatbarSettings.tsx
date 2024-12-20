@@ -1,4 +1,4 @@
-import { IconFileExport, IconSettings, IconHelp, IconCloud } from '@tabler/icons-react';
+import { IconFileExport, IconSettings, IconMail, IconCloud } from '@tabler/icons-react';
 import { useContext, useState } from 'react';
 
 
@@ -41,14 +41,14 @@ export const ChatbarSettings = () => {
             {/*    <ClearConversations onClearConversations={handleClearConversations}/>*/}
             {/*) : null}*/}
 
-            <SidebarButton
+            {/*<SidebarButton
                 text={t('Manage Accounts')}
                 icon={<IconSettings size={18} />}
                 onClick={() => {
                     //statsService.setThemeEvent();
                     setIsAccountDialogVisible(true)
                 }}
-            />
+            />*/}
 
             <Import onImport={handleImportConversations} />
 
@@ -79,9 +79,9 @@ export const ChatbarSettings = () => {
             />
 
             <SidebarButton
-                text={t('Send Feedback')}
-                icon={<IconHelp size={18} />}
-                onClick={() => window.location.href = 'mailto:ithelp@utc.edu'}
+                text={t('Have questions? Email us.')}
+                icon={<IconMail size={18} />}
+                onClick={() => window.location.href = 'mailto:ithelp@utc.edu?subject=I have a question(s) about ChattUTC.'}
             />
 
 

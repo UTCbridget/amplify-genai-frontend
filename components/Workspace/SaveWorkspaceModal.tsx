@@ -260,7 +260,7 @@ export const SaveWorkspaceModal: FC<SharingModalProps> = (
             <div className="flex items-center p-2" ref={itemRefs.current[item.id]} key={item.id}>
                 <input
                     type="checkbox"
-                    className="form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-[#40414F] dark:ring-offset-neutral-300 dark:border-opacity-50"
+                    className="form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-blue-700 dark:ring-offset-neutral-300 dark:border-opacity-50"
                     checked={isSelected(item, itemType)}
                     onChange={() => {
                         handleItemSelect(item, itemType)
@@ -343,7 +343,7 @@ export const SaveWorkspaceModal: FC<SharingModalProps> = (
 
                                     <h3 className="text-black dark:text-white text-lg mt-2 border-b">Workspace Name</h3>
                                     <textarea
-                                        className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                        className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-blue-700 dark:text-neutral-100"
                                         style={{resize: 'none'}}
                                         placeholder={
                                             "Describe the workspace (required)."
@@ -360,7 +360,7 @@ export const SaveWorkspaceModal: FC<SharingModalProps> = (
                                             <div className="mt-3 flex items-center border-b">
                                                 <input
                                                     type="checkbox"
-                                                    className="mx-2 form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-[#40414F] dark:ring-offset-neutral-300 dark:border-opacity-50"
+                                                    className="mx-2 form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-blue-700 dark:ring-offset-neutral-300 dark:border-opacity-50"
                                                     checked={promptsChecked}
                                                     onChange={(e) => handlePromptsCheck(e.target.checked)}
                                                 />
@@ -376,7 +376,7 @@ export const SaveWorkspaceModal: FC<SharingModalProps> = (
 
                                                 <input
                                                     type="checkbox"
-                                                    className="mx-2 form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-[#40414F] dark:ring-offset-neutral-300 dark:border-opacity-50"
+                                                    className="mx-2 form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-blue-700 dark:ring-offset-neutral-300 dark:border-opacity-50"
                                                     checked={conversationsChecked}
                                                     onChange={(e) => handleConversationsCheck(e.target.checked)}
                                                 />
@@ -392,7 +392,7 @@ export const SaveWorkspaceModal: FC<SharingModalProps> = (
 
                                                 <input
                                                     type="checkbox"
-                                                    className="mx-2 form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-[#40414F] dark:ring-offset-neutral-300 dark:border-opacity-50"
+                                                    className="mx-2 form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-blue-700 dark:ring-offset-neutral-300 dark:border-opacity-50"
                                                     checked={foldersChecked}
                                                     onChange={(e) => handleFoldersCheck(e.target.checked)}
                                                 />

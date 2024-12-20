@@ -70,7 +70,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
         setIsLoading(true);
 
         let newAssistant = getAssistant(assistant);
-        newAssistant.name = name;
+        newAssistant.name = 'ChattUTC';
         newAssistant.provider = "amplify";
         newAssistant.data = newAssistant.data || {provider: "amplify"};
         newAssistant.description = description;
@@ -151,7 +151,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                                 {t('Assistant Name')}
                             </div>
                             <input
-                                className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-blue-700 dark:text-neutral-100"
                                 placeholder={t('A name for your prompt.') || ''}
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
@@ -161,7 +161,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                                 {t('Description')}
                             </div>
                             <textarea
-                                className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-blue-700 dark:text-neutral-100"
                                 style={{resize: 'none'}}
                                 placeholder={t('A description for your prompt.') || ''}
                                 value={description}
@@ -173,7 +173,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                                 {t('Instructions')}
                             </div>
                             <textarea
-                                className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-blue-700 dark:text-neutral-100"
                                 style={{resize: 'none'}}
                                 placeholder={
                                     t(
@@ -280,7 +280,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                                         {t('URI')}
                                     </div>
                                     <input
-                                        className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                        className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-blue-700 dark:text-neutral-100"
                                         placeholder={t('') || ''}
                                         value={uri || ""}
                                         onChange={(e) => setUri(e.target.value)}
@@ -291,7 +291,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                         <div className="flex flex-row items-center justify-end p-4 bg-white dark:bg-[#112e51]">
                             <button
                                 type="button"
-                                className="mr-2 w-full px-4 py-2 border  shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300"
+                                className="assistant-cancel-button mr-2 w-full px-4 py-2 border  shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white/80 dark:text-blue-500 dark:hover:text-blue-500 dark:hover:bg-yellow-500"
                                 onClick={() => {
                                     onCancel();
                                 }}
@@ -300,7 +300,7 @@ export const AssistantModal: FC<Props> = ({assistant, onCancel, onSave, onUpdate
                             </button>
                             <button
                                 type="button"
-                                className="w-full px-4 py-2 border  shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white dark:text-black dark:hover:bg-neutral-300"
+                                className="assistant-save-button w-full px-4 py-2 border  shadow border-neutral-500 text-neutral-900 hover:bg-neutral-100 focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-white/80 dark:text-blue-500 dark:hover:text-blue-500 dark:hover:bg-yellow-500"
                                 onClick={() => {
                                     handleUpdateAssistant();
                                 }}

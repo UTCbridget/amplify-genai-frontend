@@ -281,7 +281,7 @@ export const ImportWorkspaceModal: FC<ImportModalProps> = (
                 {editable && (
                 <input
                     type="checkbox"
-                    className="form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-[#40414F] dark:focus:bg-neutral-700 dark:ring-offset-neutral-300 dark:border-opacity-50"
+                    className="form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-blue-700 dark:focus:bg-neutral-700 dark:ring-offset-neutral-300 dark:border-opacity-50"
                     checked={isSelected(item, itemType)}
                     onChange={() => {
                         handleItemSelect(item, itemType)
@@ -382,7 +382,7 @@ export const ImportWorkspaceModal: FC<ImportModalProps> = (
 
                                     <h3 className="text-black dark:text-white text-lg mt-4 border-b">Note</h3>
                                     <div
-                                        className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                        className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-blue-700 dark:text-neutral-100"
                                     >{note}</div>
 
                                     {includePrompts && prompts.length > 0 && (
@@ -391,7 +391,7 @@ export const ImportWorkspaceModal: FC<ImportModalProps> = (
                                                 {editable && (
                                                     <input
                                                         type="checkbox"
-                                                        className="mx-2 form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-[#40414F] dark:ring-offset-neutral-300 dark:border-opacity-50"
+                                                        className="mx-2 form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-blue-700 dark:ring-offset-neutral-300 dark:border-opacity-50"
                                                         checked={promptsChecked}
                                                         onChange={(e) => handlePromptsCheck(e.target.checked)}
                                                     />
@@ -408,7 +408,7 @@ export const ImportWorkspaceModal: FC<ImportModalProps> = (
                                                 {editable && (
                                                     <input
                                                         type="checkbox"
-                                                        className="mx-2 form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-[#40414F] dark:ring-offset-neutral-300 dark:border-opacity-50"
+                                                        className="mx-2 form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-blue-700 dark:ring-offset-neutral-300 dark:border-opacity-50"
                                                         checked={conversationsChecked}
                                                         onChange={(e) => handleConversationsCheck(e.target.checked)}
                                                     />
@@ -425,7 +425,7 @@ export const ImportWorkspaceModal: FC<ImportModalProps> = (
                                                 {editable && (
                                                     <input
                                                         type="checkbox"
-                                                        className="mx-2 form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-[#40414F] dark:ring-offset-neutral-300 dark:border-opacity-50"
+                                                        className="mx-2 form-checkbox  border border-neutral-500 shadow focus:outline-none dark:border-neutral-800 dark:bg-blue-700 dark:ring-offset-neutral-300 dark:border-opacity-50"
                                                         checked={foldersChecked}
                                                         onChange={(e) => handleFoldersCheck(e.target.checked)}
                                                     />

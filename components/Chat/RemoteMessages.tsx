@@ -22,7 +22,7 @@ import UserMessageEditor from "@/components/Chat/ChatContentBlocks/UserMessageEd
 import AssistantMessageEditor from "@/components/Chat/ChatContentBlocks/AssistantMessageEditor";
 import {Style} from "css-to-react-native";
 import {Prompt} from "@/types/prompt";
-import {Stars} from "@/components/Chat/Stars";
+/*import {Stars} from "@/components/Chat/Stars";*/
 import {DownloadModal} from "@/components/Download/DownloadModal";
 import Loader from "@/components/Loader/Loader";
 import {getRemoteConversation} from "@/services/remoteMessagesService";

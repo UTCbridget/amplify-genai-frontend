@@ -225,7 +225,7 @@ export const AccountDialog: FC<Props> = ({ open, onClose }) => {
                                 Default account:
                             </div>
                             <select
-                                className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-blue-700 dark:text-neutral-100"
                                 value={defaultAccount}
                                 onChange={(event) => {
                                     setDefaultAccount(event.target.value);

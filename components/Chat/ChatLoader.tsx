@@ -1,4 +1,4 @@
-import { IconRobot } from '@tabler/icons-react';
+/*import { IconRobot } from '@tabler/icons-react';*/
 import { FC } from 'react';
 
 interface Props { }

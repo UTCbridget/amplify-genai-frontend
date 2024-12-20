@@ -708,20 +708,20 @@ export const Chat = memo(({stopConversationRef}: Props) => {
 
 // @ts-ignore
         return (
-            <div className="relative flex-1 overflow-hidden">
+            <div className="input-output-wrapper relative flex overflow-hidden flex-col w-full">
                 { modelError ? (
                     <ErrorMessageDiv error={modelError}/>
                 ) : (
                     <>
                         <div
-                            className="max-h-full overflow-x-hidden"
+                            className="output-message-wrapper max-h-full overflow-x-hidden"
                             ref={chatContainerRef}
                             onScroll={handleScroll}
                         >
                             {selectedConversation && selectedConversation?.messages.length === 0 ? (
                                 <>
                                     <div
-                                        className="mx-auto flex flex-col space-y-5 md:space-y-10 px-3 pt-5 md:pt-12 sm:max-w-[600px]">
+                                        className="start-conversation mx-auto mb-24 flex flex-col space-y-5 md:space-y-10 px-3 pt-5 md:pt-12 sm:max-w-[600px]">
                                         <div
                                             className="text-center text-3xl font-semibold text-blue-500 dark:text-white">
                                             {models.length === 0 ? (
@@ -843,12 +843,12 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                             }}/>
                                     )}
                                     <div
-                                        className="workspace-wrapper items-center sticky top-0 z-10 flex justify-center border border-b-neutral-300 bg-neutral-100 py-2 text-sm text-neutral-500 dark:border-none dark:bg-blue-500 dark:text-neutral-200">
+                                        className="workspace-wrapper items-center sticky top-0 z-10 flex justify-center border border-b-neutral-300 bg-neutral-100 py-2 text-sm text-neutral-500 dark:border-none dark:bg-blue-800 dark:text-neutral-200">
 
                                         {t('Workspace: ' + workspaceMetadata.name)} | {selectedConversation?.model.name} | {t('Temp')}
                                         : {selectedConversation?.temperature} |
                                         <button
-                                            className="ml-2 cursor-pointer hover:opacity-50"
+                                            className="workspace-button ml-2 cursor-pointer hover:opacity-50 dark:hover:opacity-100 dark:hover:text-yellow-500"
                                             onClick={(e) => {
                                                 e.preventDefault();
                                                 e.stopPropagation();
@@ -863,25 +863,25 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                             }}
                                             title="Chat Settings"
                                         >
-                                            <IconSettings size={18}/>
+                                            <IconSettings size={18} className="scale-125 mx-2"/>
                                         </button>
                                         
                                         <button
-                                            className="ml-2 cursor-pointer hover:opacity-50"
+                                            className="workspace-button ml-2 cursor-pointer hover:opacity-50 dark:hover:opacity-100 dark:hover:text-yellow-500"
                                             onClick={onClearAll}
                                             title="Clear Messages"
                                         >
-                                            <IconClearAll size={18}/>
+                                            <IconClearAll size={18} className="scale-125 mx-2"/>
                                         </button>
                                         <button
-                                            className="ml-2 cursor-pointer hover:opacity-50"
+                                            className="workspace-button ml-2 cursor-pointer hover:opacity-50 dark:hover:opacity-100 dark:hover:text-yellow-500"
                                             onClick={() => setIsShareDialogVisible(true)}
                                             title="Share"
                                         >
-                                            <IconShare size={18}/>
+                                            <IconShare size={18} className="scale-125 mx-2"/>
                                         </button>
                                         <button
-                                            className="ml-2 cursor-pointer hover:opacity-50"
+                                            className="workspace-button ml-2 cursor-pointer hover:opacity-50 dark:hover:opacity-100 dark:hover:text-yellow-500"
                                             onClick={(e) => {
                                                 e.preventDefault();
                                                 e.stopPropagation();
@@ -890,7 +890,7 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                             }}
                                             title="Download"
                                         >
-                                            <IconDownload size={18}/>
+                                            <IconDownload size={18} className="scale-125 mx-2"/>
                                         </button>
                                         {featureFlags.storeCloudConversations &&
                                         <CloudStorage iconSize={18} />
@@ -898,7 +898,7 @@ export const Chat = memo(({stopConversationRef}: Props) => {
 
                                         |
                                         <button
-                                            className="ml-2 mr-2 cursor-pointer hover:opacity-50"
+                                            className="workspace-button ml-2 cursor-pointer hover:opacity-50 dark:hover:opacity-100"
                                             onClick={(e) => {
                                                 e.preventDefault();
                                                 e.stopPropagation();
@@ -907,7 +907,7 @@ export const Chat = memo(({stopConversationRef}: Props) => {
                                             title="Files"
                                         >
                                             <div className="flex flex-row items-center ml-2
-                                            bg-[#9de6ff] dark:bg-[#8edffa]  text-gray-600 p-1">
+                                            bg-[#9de6ff] dark:bg-blue-500  text-gray-600 dark:text-neutral-200  dark:hover:text-yellow-500 py-1 px-3">
                                                 <div><IconRocket size={18}/></div>
                                                 <div className="ml-1">Files </div>
                                             </div>

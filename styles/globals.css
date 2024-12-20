@@ -2,14 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2family=family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
-.barlow-condensed {
-  font-family: "Barlow Condensed", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
 
 html {
   /*background: repeating-linear-gradient(-77deg,#0b1e33,#0b1e33 15px,#12263c 15px,#12263c 20px);*/
@@ -91,6 +85,17 @@ svg.utc-logo {
 input:focus-visible, textarea:focus-visible {outline: 2px solid #fdb736;}
 input[type=range] {accent-color: #fdb736;height:6px;}
 
+.chat-input textarea {overflow-y:scroll!important}
+.prose {max-width:unset; }
+.user-chat-actions, .chattutc-chat-actions {
+  width:fit-content;
+  border-top:1px #bbb solid;
+  margin-top:12px;
+}
+.user-chat-actions div, .chattutc-chat-actions div {
+  transform: scale(1.25);
+  margin:12px 12px 0;
+}
 
 ::-webkit-scrollbar-track {
   background-color: transparent;
@@ -156,6 +161,16 @@ pre:has(div.codeblock) {
 
 .assistant-wrapper {
   /*background: rgba(5,18,40,.5)!important;*/
-  background: rgba(255,255,255,.1)!important
+  background: rgba(255,255,255,.05)!important
 }
 .power-c-chatt-icon {margin-top:.15rem;}
+
+/****mantine overrides****/
+
+.mantine-Paper-root .mantine-LoadingOverlay-root {background:rgba(17,46,81,.5)}
+.mantine-Paper-root div[role="alert"], .mantine-1eu8kj1 {background: #051228;color:rgba(255,255,255,.8);}
+.mantine-xqmgq6 {color: rgba(255,255,255,.8);}
+.mantine-Paper-root table thead tr {background-color: #112e51!important;}
+.mantine-Paper-root table tbody td {background-color: #112e51;color:rgba(255,255,255,.8)}
+.mantine-Paper-root .mantine-Skeleton-root:before, .mantine-Paper-root .mantine-Skeleton-root:after {background-color: #051228!important;color:rgba(255,255,255,.1)}
+.mantine-TableHeadCell-Content-Wrapper {color:#fdb736}

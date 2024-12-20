@@ -22,7 +22,7 @@ import UserMessageEditor from "@/components/Chat/ChatContentBlocks/UserMessageEd
 import AssistantMessageEditor from "@/components/Chat/ChatContentBlocks/AssistantMessageEditor";
 import {Style} from "css-to-react-native";
 import { Prompt } from "@/types/prompt";
-import { Stars } from "@/components/Chat/Stars";
+/*import { Stars } from "@/components/Chat/Stars";*/
 import {DownloadModal} from "@/components/Download/DownloadModal";
 import Loader from "@/components/Loader/Loader";
 
@@ -216,13 +216,13 @@ export const RemoteMessage: FC<Props> = memo(({
                                     onSendPrompt(p)
                                 }}/>
                             )}
-                            {(messageIsStreaming) ? null : (
+                            {/*{(messageIsStreaming) ? null : (
                                 <Stars starRating={message.data && message.data.rating || 0} setStars={(r) => {
                                     if (onEdit) {
                                         onEdit({...message, data: {...message.data, rating: r}});
                                     }
                                 }} />
-                            )}
+                            )}*/}
                             {(messageIsStreaming && messageIndex == (selectedConversation?.messages.length ?? 0) - 1) ?
                                 // <LoadingIcon />
                                 <Loader type="ping" size="48"/>

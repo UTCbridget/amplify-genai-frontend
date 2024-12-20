@@ -83,7 +83,7 @@ export const RAG = () => {
                                         Prompt
                                     </div>
                                     <textarea
-                                        className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                        className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-blue-700 dark:text-neutral-100"
                                         value={prompt}
                                         onChange={(e) => setPrompt(e.target.value)}
                                         rows={3}
@@ -117,7 +117,7 @@ export const RAG = () => {
                                         Upload File
                                     </div>
                                     <input
-                                        className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-[#40414F] dark:text-neutral-100"
+                                        className="mt-2 w-full  border border-neutral-500 px-4 py-2 text-neutral-900 shadow focus:outline-none dark:border-neutral-800 dark:border-opacity-50 dark:bg-blue-700 dark:text-neutral-100"
                                         type="file"
                                         onChange={(e) => setFile(e.target.files ? e.target.files[0] : null)}
                                     />

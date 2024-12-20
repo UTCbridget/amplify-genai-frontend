@@ -1,4 +1,4 @@
-import React, {FC, useContext, useEffect, useState} from 'react';
+/*import React, {FC, useContext, useEffect, useState} from 'react';
 import {ExportFormatV4, ShareItem} from "@/types/export";
 import {
     IconCloudComputing,
@@ -255,4 +255,4 @@ const WorkspaceList: FC<SharedItemsListProps> = () => {
     );
 };
 
-export default WorkspaceList;
+export default WorkspaceList;*/

@@ -340,7 +340,7 @@ export const AttachFile: FC<Props> = ({id, onAttach, onUploadProgress,onSetMetad
           />
     
           <button
-            className="left-2 top-2 p-1 text-neutral-800 opacity-60 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-opacity-50 dark:text-neutral-100 dark:hover:text-neutral-200"
+            className="left-2 top-2 p-1 text-neutral-800 hover:bg-neutral-200 hover:text-neutral-900 dark:bg-transparent dark:text-neutral-100 dark:hover:text-neutral-200"
             onClick={() => {
               const importFile = document.querySelector('#' + id) as HTMLInputElement;
               if (importFile) {
@@ -350,7 +350,7 @@ export const AttachFile: FC<Props> = ({id, onAttach, onUploadProgress,onSetMetad
             onKeyDown={(e) => {}}
             title="Upload File"
           >
-            <IconPlus size={20} />
+            <IconPlus size={20} className="plus-icon dark:text-neutral-100 dark:hover:text-yellow-500" />
           </button>
         </>
       );

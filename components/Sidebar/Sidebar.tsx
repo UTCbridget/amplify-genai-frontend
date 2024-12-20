@@ -69,7 +69,7 @@ const Sidebar = <T,>({
   const addButtonForSide = (side: string) => {
     if (side === 'left') return addItemButton("w-[205px]")
 
-    const addAssistantButton = (
+    /*const addAssistantButton = (
       <button
         className="text-sidebar flex w-[205px] flex-shrink-0 cursor-pointer select-none items-center justify-between gap-3 border dark:border-white/20 p-3 dark:text-white dark:hover:text-yellow-500 transition-colors duration-200 bg-transparent hover:bg-blue-500"
         onClick={() => {
@@ -83,14 +83,14 @@ const Sidebar = <T,>({
       </button>
     );
 
-    return addAssistantButton
+    return addAssistantButton*/
     
   }
 
   return (
     <div className={`border-t dark:border-white/20 overflow-x-hidden h-full`}>
       <div
-        className={`fixed top-0 ${side}-0 z-40 flex h-full w-[270px] flex-none flex-col space-y-2 bg-transparent p-2 text-[14px] transition-all sm:relative sm:top-0 xs:dark:bg-blue-500`}
+        className={`sidebar-wrapper fixed top-0 ${side}-0 z-40 flex h-full w-[270px] flex-none flex-col space-y-2 bg-transparent p-2 text-[14px] transition-all sm:relative sm:top-0 xs:dark:bg-blue-500`}
       >
         <div className="flex items-center">
           {addButtonForSide(side)}
@@ -102,15 +102,15 @@ const Sidebar = <T,>({
             <IconFolderPlus size={16} />
           </button>
         </div>
-        {side === 'right' && addItemButton('')}
-        <Search
+        {/*side === 'right' && addItemButton('')*/}
+        {/*<Search
           placeholder={t('Search...') || ''}
           searchTerm={searchTerm}
           onSearch={handleSearchTerm}
-        />
+        />*/}
         <div className="conversation-prompt-wrapper">
         <KebabMenu
-        label={side === 'left' ? "Conversations": "Prompts"} 
+        label={side === 'left' ? "Conversations": ""} 
         items={items}
         handleSearchTerm={handleSearchTerm}
         setFolderSort={setFolderSort}
